@@ -41,6 +41,7 @@ step 17-test-sql       bash scripts/test-sql.sh
 step 18-build-shared   pnpm --filter @dar/shared build
 step 19-build-api      pnpm --filter @dar/api build
 step 20-build-admin    pnpm --filter @dar/admin build
+step 20b-base-seed-sql  bash -c 'psql -h localhost -U dar -d dar -c "CREATE DATABASE dar_base" && cd apps/api && DATABASE_URL=postgresql://dar:dar_local_dev@localhost:5432/dar_base npx prisma migrate deploy && DATABASE_URL=postgresql://dar:dar_local_dev@localhost:5432/dar_base SEED_DEMO=false npx tsx prisma/seed.ts && pg_dump -h localhost -U dar -d dar_base --data-only --inserts --column-inserts --no-owner --no-privileges --exclude-table=_prisma_migrations > ../../ci-out/base-seed.sql && wc -l ../../ci-out/base-seed.sql'
 step 21-seed-demo      bash -c 'cd apps/api && npx prisma migrate deploy && SEED_DEMO=true npx tsx prisma/seed.ts'
 step 22-expo-export-web bash -c 'cd apps/mobile && npx expo export --platform web --output-dir dist-web'
 step 23-expo-export-native bash -c 'cd apps/mobile && npx expo export --platform android --platform ios --output-dir dist-native'
