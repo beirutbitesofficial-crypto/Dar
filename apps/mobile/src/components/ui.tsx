@@ -111,7 +111,7 @@ export function Button({
       {loading ? <ActivityIndicator color={palette.fg} /> : (
         <>
           {icon && <Ionicons name={icon} size={20} color={palette.fg} />}
-          <Text variant="bodyStrong" style={{ color: palette.fg }}>{title}</Text>
+          <Text variant="bodyStrong" numberOfLines={1} adjustsFontSizeToFit minimumFontScale={0.8} style={{ color: palette.fg, flexShrink: 1 }}>{title}</Text>
         </>
       )}
     </Pressable>

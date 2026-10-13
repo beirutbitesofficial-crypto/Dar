@@ -174,7 +174,7 @@ export const ar = {
     feeDisclosureTitle: 'قبل ما تكمّل',
     feeDisclosureSale: 'إذا تمّ البيع، بتدفع عمولة وساطة {rate} من السعر النهائي المتّفق عليه. على السعر المطلوب هلّق، هيدي تقريباً {amount}.',
     feeDisclosureRent: 'إذا استأجرت هالعقار، الإيجار الشهري الكامل هو {total}، وبيشمل {fee} رسوم إدارة ووساطة شهرية طول مدة العقد.',
-    acceptTerms: 'قرأت ووافقت على الرسوم والشروط (نسخة {version})',
+    acceptTerms: 'قرأت ووافقت على الرسوم والشروط (نسخة \u2066{version}\u2069)',
     viewTerms: 'شوف الشروط',
     submit: 'أرسل الطلب',
     submitted: 'وصل طلبك',

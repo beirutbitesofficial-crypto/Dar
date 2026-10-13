@@ -57,7 +57,7 @@ export default function ListingDetails() {
       <Stack.Screen
         options={{
           headerRight: () => (
-            <Row>
+            <Row style={{ paddingEnd: space.sm }}>
               <Pressable onPress={share} accessibilityRole="button" accessibilityLabel={dict.property.share} style={styles.headerBtn}><Ionicons name="share-outline" size={22} color={colors.text} /></Pressable>
               <Pressable onPress={() => fav.toggle(l.id)} accessibilityRole="button" accessibilityLabel={fav.isFavorite(l.id) ? dict.property.unfavorite : dict.property.favorite} style={styles.headerBtn}>
                 <Ionicons name={fav.isFavorite(l.id) ? 'heart' : 'heart-outline'} size={22} color={fav.isFavorite(l.id) ? colors.danger : colors.text} />
@@ -126,8 +126,8 @@ export default function ListingDetails() {
       </Screen>
       {/* Sticky actions: viewing request and team contact. There is no owner contact. */}
       <View style={styles.actions}>
-        <Button title={dict.property.askTeam} variant="secondary" icon="chatbubble-ellipses-outline" style={{ flex: 1 }} onPress={() => requireAuth() && router.push({ pathname: '/conversation/new', params: { propertyId: l.id, ref: l.ref } })} />
-        <Button title={dict.property.requestViewing} icon="calendar-outline" style={{ flex: 1 }} onPress={() => requireAuth() && router.push(`/viewing/${l.id}`)} />
+        <Button title={dict.property.askTeam} variant="secondary" style={{ flex: 1, paddingHorizontal: space.sm }} onPress={() => requireAuth() && router.push({ pathname: '/conversation/new', params: { propertyId: l.id, ref: l.ref } })} />
+        <Button title={dict.property.requestViewing} style={{ flex: 1, paddingHorizontal: space.sm }} onPress={() => requireAuth() && router.push(`/viewing/${l.id}`)} />
       </View>
     </SafeAreaView>
   );

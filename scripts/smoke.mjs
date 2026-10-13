@@ -91,6 +91,32 @@ await visit(m, 'mobile-07-requests-ar', `${MW}/requests`, 3000, 'load');
 await visit(m, 'mobile-08-favorites-ar', `${MW}/favorites`, 2000, 'load');
 if (firstListing) await visit(m, 'mobile-09-viewing-request-ar', `${MW}${firstListing.replace('/listing/', '/viewing/')}`, 3000, 'load');
 await visit(m, 'mobile-10-account-signed-in-ar', `${MW}/account`, 2000, 'load');
+// Owner journey (Arabic): sign out the customer, sign in as a demo owner.
+async function mobileLogin(email) {
+  await m.evaluate(() => sessionStorage.clear());
+  await m.goto(`${MW}/auth/login`, { waitUntil: 'load' });
+  await m.waitForTimeout(1500);
+  const inputs = m.locator('input');
+  await inputs.nth(0).fill(email);
+  await inputs.nth(1).fill('Dar-demo-2026');
+  await m.getByRole('button').filter({ hasText: /دخول|Sign in|تسجيل/ }).last().click();
+  await m.waitForTimeout(3000);
+}
+try { await mobileLogin('owner1@demo.dar.test'); } catch (e) { console.log('owner login failed', String(e).slice(0, 200)); }
+await visit(m, 'mobile-20-owner-listings-ar', `${MW}/owner`, 3000, 'load');
+await visit(m, 'mobile-21-owner-new-listing-ar', `${MW}/owner/edit/new`, 3000, 'load');
+try {
+  // Choose "for sale" and type a price to see the live seller-commission estimate.
+  await m.getByText(/للبيع/).first().click().catch(() => {});
+  const price = m.locator('input[inputmode="numeric"], input[inputmode="decimal"]').first();
+  await price.fill('100000').catch(() => {});
+  await m.waitForTimeout(1500);
+  await m.screenshot({ path: `${OUT}/mobile-22-owner-sale-estimate-ar.png`, fullPage: true });
+} catch {}
+await visit(m, 'mobile-23-owner-rentals-ar', `${MW}/rentals`, 3000, 'load');
+await visit(m, 'mobile-24-owner-statement-ar', `${MW}/statement`, 3000, 'load');
+try { await mobileLogin('customer1@demo.dar.test'); } catch {}
+
 // English (LTR)
 await m.evaluate(() => localStorage.setItem('dar.locale', 'en'));
 await visit(m, 'mobile-11-home-en', `${MW}/`, 3000, 'load');
