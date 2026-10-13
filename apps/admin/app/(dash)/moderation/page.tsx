@@ -4,6 +4,7 @@ import { ApiForm, Card, DemoBadge, Empty, Flash, PageHeader, Table } from '@/com
 import { apiGet } from '@/lib/api';
 import { dateTime } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 type SP = Promise<{ ok?: string; error?: string }>;
 
@@ -17,7 +18,7 @@ export default async function Moderation({ searchParams }: { searchParams: SP })
       <Flash sp={sp} />
       <Card title={dict.listingStatus.PENDING_REVIEW}>
         {q.listings.length === 0 ? <Empty text={t('empty')} /> : (
-          <Table head={['Ref', 'Title', 'Type', 'Owner', 'Submitted', '']}>
+          <Table head={[<L ar="المرجع" en="Ref" />, <L ar="العنوان" en="Title" />, <L ar="النوع" en="Type" />, <L ar="المالك" en="Owner" />, <L ar="تاريخ التقديم" en="Submitted" />, '']}>
             {q.listings.map((l: any) => (
               <tr key={l.id}>
                 <td><Link href={`/properties/${l.id}`}>{l.ref}</Link> <DemoBadge show={l.demo} label={t('demo')} /></td>
@@ -25,14 +26,14 @@ export default async function Moderation({ searchParams }: { searchParams: SP })
                 <td>{dict.listingType[l.listingType as 'SALE']} · {dict.propertyType[l.propertyType as 'LAND']}</td>
                 <td>{l.owner.fullName}</td>
                 <td>{dateTime(l.submittedAt, locale)}</td>
-                <td><Link className="btn secondary" href={`/properties/${l.id}`}>Review</Link></td>
+                <td><Link className="btn secondary" href={`/properties/${l.id}`}><L ar="مراجعة" en="Review" /></Link></td>
               </tr>
             ))}
           </Table>
         )}
       </Card>
 
-      <Card title="Pending edits to published listings">
+      <Card title={<L ar="تعديلات معلّقة على إعلانات منشورة" en="Pending edits to published listings" />}>
         {q.revisions.length === 0 ? <Empty text={t('empty')} /> : q.revisions.map((r: any) => (
           <div key={r.id} className="card" style={{ boxShadow: 'none' }}>
             <div className="topbar" style={{ marginBottom: 8 }}>
@@ -56,8 +57,8 @@ export default async function Moderation({ searchParams }: { searchParams: SP })
         ))}
       </Card>
 
-      <Card title="New photos on published listings">
-        <p className="notice">Check every photo for phone numbers, signs, people or anything that identifies the exact address. Automatic detection is not used for photos.</p>
+      <Card title={<L ar="صور جديدة على إعلانات منشورة" en="New photos on published listings" />}>
+        <p className="notice"><L ar="افحص كل صورة: أرقام تلفون، لافتات، أشخاص، أو أي شي بيدلّ على العنوان الدقيق. ما في كشف تلقائي على الصور." en="Check every photo for phone numbers, signs, people or anything that identifies the exact address. Automatic detection is not used for photos." /></p>
         {q.media.length === 0 ? <Empty text={t('empty')} /> : (
           <div className="photos" style={{ marginTop: 12 }}>
             {q.media.map((m: any) => (

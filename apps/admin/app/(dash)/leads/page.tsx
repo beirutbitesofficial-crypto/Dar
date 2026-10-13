@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { PageHeader } from '@/components/ui';
 import { apiGet } from '@/lib/api';
 import { date } from '@/lib/format';
-import { getT } from '@/lib/i18n';
+import { getT, LEAD_STATUS } from '@/lib/i18n';
 
 const COLUMNS = ['NEW', 'ASSIGNED', 'CONTACTED', 'VIEWING_SCHEDULED', 'VIEWED', 'NEGOTIATION', 'WON'] as const;
 
@@ -18,7 +18,7 @@ export default async function Leads() {
           const items = data.items.filter((l: any) => l.status === s);
           return (
             <div className="col" key={s}>
-              <strong>{s.replaceAll('_', ' ').toLowerCase()}</strong> <span className="sub">({items.length})</span>
+              <strong>{LEAD_STATUS[s]?.[locale] ?? s}</strong> <span className="sub">({items.length})</span>
               {items.map((l: any) => (
                 <div className="item" key={l.id}>
                   <Link href={`/leads/${l.id}`}>{l.customerName}</Link>

@@ -3,6 +3,7 @@ import { Badge, DemoBadge, Empty, PageHeader, Table } from '@/components/ui';
 import { apiGet } from '@/lib/api';
 import { date, usd } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 const STATUSES = ['', 'DRAFT', 'PENDING_REVIEW', 'PUBLISHED', 'REJECTED', 'PAUSED', 'RENTED', 'SOLD', 'ARCHIVED'];
 
@@ -24,7 +25,7 @@ export default async function Properties({ searchParams }: { searchParams: Promi
         <button className="secondary">{t('search')}</button>
       </form>
       {data.items.length === 0 ? <Empty text={t('empty')} /> : (
-        <Table head={['Ref', 'Title', t('status'), 'Type', 'Price', 'Town', t('employee'), 'Owner', 'Updated']}>
+        <Table head={[<L ar="المرجع" en="Ref" />, <L ar="العنوان" en="Title" />, t('status'), <L ar="النوع" en="Type" />, <L ar="السعر" en="Price" />, <L ar="البلدة" en="Town" />, t('employee'), <L ar="المالك" en="Owner" />, <L ar="آخر تعديل" en="Updated" />]}>
           {data.items.map((p: any) => (
             <tr key={p.id}>
               <td><Link href={`/properties/${p.id}`}>{p.ref}</Link> <DemoBadge show={p.demo} label={t('demo')} /></td>

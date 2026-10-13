@@ -7,7 +7,7 @@ const OUT = 'ci-out/shots';
 const report = [];
 const browser = await chromium.launch();
 
-async function visit(page, name, url, wait = 1500) {
+async function visit(page, name, url, wait = 1500, waitUntil = 'networkidle') {
   const errors = [];
   const onConsole = (m) => m.type() === 'error' && errors.push(m.text().slice(0, 300));
   const onResp = (r) => r.status() >= 400 && errors.push(`${r.status()} ${r.url()}`);
@@ -15,7 +15,7 @@ async function visit(page, name, url, wait = 1500) {
   page.on('response', onResp);
   let status = 'ok';
   try {
-    const resp = await page.goto(url, { waitUntil: 'networkidle', timeout: 30000 });
+    const resp = await page.goto(url, { waitUntil, timeout: 30000 });
     if (resp && resp.status() >= 400) status = `http ${resp.status()}`;
     await page.waitForTimeout(wait);
   } catch (e) {
@@ -62,14 +62,33 @@ await visit(emp, 'employee-03-settings-forbidden', 'http://localhost:3000/settin
 const mobileCtx = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
 const m = await mobileCtx.newPage();
 const MW = 'http://localhost:8081';
-await visit(m, 'mobile-01-home-ar', `${MW}/`, 3000);
-await visit(m, 'mobile-02-search-ar', `${MW}/search`, 3000);
+await visit(m, 'mobile-01-home-ar', `${MW}/`, 3000, 'load');
+await visit(m, 'mobile-02-search-ar', `${MW}/search`, 3000, 'load');
 const firstListing = await m.locator('a[href^="/listing/"]').first().getAttribute('href').catch(() => null);
-if (firstListing) await visit(m, 'mobile-03-listing-ar', `${MW}${firstListing}`, 3000);
-await visit(m, 'mobile-04-account-ar', `${MW}/account`, 2000);
-await visit(m, 'mobile-05-login-ar', `${MW}/auth/login`, 2000);
+if (firstListing) await visit(m, 'mobile-03-listing-ar', `${MW}${firstListing}`, 3000, 'load');
+await visit(m, 'mobile-04-account-ar', `${MW}/account`, 2000, 'load');
+await visit(m, 'mobile-05-login-ar', `${MW}/auth/login`, 2000, 'load');
+await visit(m, 'mobile-06-list-property-ar', `${MW}/owner`, 2000, 'load');
+// Sign in as a demo customer through the real form, then view requests/favorites.
 try {
-  await m.getByPlaceholder(/@/).first().fill('customer1@demo.dar.test').catch(() => {});
-} catch {}
+  await m.goto(`${MW}/auth/login`, { waitUntil: 'load' });
+  await m.waitForTimeout(1500);
+  const inputs = m.locator('input');
+  await inputs.nth(0).fill('customer1@demo.dar.test');
+  await inputs.nth(1).fill('Dar-demo-2026');
+  await m.getByRole('button').filter({ hasText: /دخول|Sign in|تسجيل/ }).last().click();
+  await m.waitForTimeout(3000);
+} catch (e) {
+  console.log('mobile login failed', String(e).slice(0, 200));
+}
+await visit(m, 'mobile-07-requests-ar', `${MW}/requests`, 3000, 'load');
+await visit(m, 'mobile-08-favorites-ar', `${MW}/favorites`, 2000, 'load');
+if (firstListing) await visit(m, 'mobile-09-viewing-request-ar', `${MW}${firstListing.replace('/listing/', '/viewing/')}`, 3000, 'load');
+await visit(m, 'mobile-10-account-signed-in-ar', `${MW}/account`, 2000, 'load');
+// English (LTR)
+await m.evaluate(() => localStorage.setItem('dar.locale', 'en'));
+await visit(m, 'mobile-11-home-en', `${MW}/`, 3000, 'load');
+if (firstListing) await visit(m, 'mobile-12-listing-en', `${MW}${firstListing}`, 3000, 'load');
+await visit(m, 'mobile-13-requests-en', `${MW}/requests`, 3000, 'load');
 fs.writeFileSync('ci-out/smoke.json', JSON.stringify(report, null, 2));
 await browser.close();

@@ -1,6 +1,7 @@
 import { ApiForm, Card, Flash, PageHeader, Table } from '@/components/ui';
 import { apiGet } from '@/lib/api';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 export default async function Locations({ searchParams }: { searchParams: Promise<{ ok?: string; error?: string }> }) {
   const sp = await searchParams;
@@ -14,16 +15,16 @@ export default async function Locations({ searchParams }: { searchParams: Promis
       <Flash sp={sp} />
       <Card title={t('create')}>
         <ApiForm path="/v1/admin/locations" back="/locations">
-          <select name="kind"><option value="AREA">Area</option><option value="TOWN">Town</option><option value="NEIGHBORHOOD">Neighborhood</option></select>
+          <select name="kind"><option value="AREA"><L ar="المنطقة" en="Area" /></option><option value="TOWN"><L ar="البلدة" en="Town" /></option><option value="NEIGHBORHOOD"><L ar="الحي" en="Neighborhood" /></option></select>
           <select name="parentId" defaultValue=""><option value="">— parent —</option>{parentOptions.map((p) => <option key={p.id} value={p.id}>{p.kind}: {p.nameEn}</option>)}</select>
           <input name="nameAr" placeholder="الاسم بالعربي" required />
-          <input name="nameEn" placeholder="Name (EN)" required />
-          <input name="num:lat" placeholder="lat" style={{ width: 110 }} />
-          <input name="num:lng" placeholder="lng" style={{ width: 110 }} />
+          <input name="nameEn" placeholder="الاسم (إنكليزي) · Name (EN)" required />
+          <input name="num:lat" placeholder="خط العرض · lat" style={{ width: 110 }} />
+          <input name="num:lng" placeholder="خط الطول · lng" style={{ width: 110 }} />
           <button>{t('create')}</button>
         </ApiForm>
       </Card>
-      <Table head={['Kind', 'Name', 'Parent', 'lat, lng', 'Listings', 'Active', '']}>
+      <Table head={[<L ar="النوع" en="Kind" />, <L ar="الاسم" en="Name" />, <L ar="يتبع لـ" en="Parent" />, <L ar="الإحداثيات" en="lat, lng" />, <L ar="الإعلانات" en="Listings" />, <L ar="فعّال" en="Active" />, '']}>
         {locs.map((l) => (
           <tr key={l.id}>
             <td>{l.kind}</td><td>{l.nameAr} · {l.nameEn}</td><td>{l.parentId ? byId.get(l.parentId)?.nameEn : '—'}</td>
@@ -42,9 +43,9 @@ export default async function Locations({ searchParams }: { searchParams: Promis
           </tr>
         ))}
       </Table>
-      <Card title="Amenities">
-        <p className="sub">Amenity keys are fixed in the shared schema (packages/shared/src/domain/enums.ts); labels, availability per property type and visibility are editable here.</p>
-        <Table head={['Key', 'Labels', 'Applies to', 'Active', '']}>
+      <Card title={<L ar="المزايا" en="Amenities" />}>
+        <p className="sub"><L ar="رموز المزايا ثابتة بالنظام؛ فيك تعدّل أسماءها، ولأي نوع عقار بتنطبق، وإذا ظاهرة أو لا." en="Amenity keys are fixed in the shared schema (packages/shared/src/domain/enums.ts); labels, availability per property type and visibility are editable here." /></p>
+        <Table head={[<L ar="الرمز" en="Key" />, <L ar="الأسماء" en="Labels" />, <L ar="بينطبق على" en="Applies to" />, <L ar="فعّال" en="Active" />, '']}>
           {amenities.map((a) => (
             <tr key={a.key}>
               <td><code>{a.key}</code></td>
@@ -55,7 +56,7 @@ export default async function Locations({ searchParams }: { searchParams: Promis
                   {['APARTMENT', 'HOUSE_VILLA', 'LAND', 'COMMERCIAL'].map((pt) => (
                     <label key={pt}><span><input type="checkbox" name="list:appliesTo" value={pt} defaultChecked={a.appliesTo.includes(pt)} /> {pt}</span></label>
                   ))}
-                  <select name="bool:active" defaultValue={String(a.active)}><option value="true">Active</option><option value="false">Hidden</option></select>
+                  <select name="bool:active" defaultValue={String(a.active)}><option value="true"><L ar="فعّال" en="Active" /></option><option value="false"><L ar="مخفي" en="Hidden" /></option></select>
                   <input type="hidden" name="num:sortOrder" value={a.sortOrder} />
                   <button className="secondary">{t('save')}</button>
                 </ApiForm>

@@ -2,11 +2,11 @@ import { DashboardOverview } from '@dar/shared';
 import { Card, PageHeader, Stat, Table } from '@/components/ui';
 import { apiGet, isAdmin, me } from '@/lib/api';
 import { usd } from '@/lib/format';
-import { getT } from '@/lib/i18n';
+import { getT, LEAD_STATUS } from '@/lib/i18n';
 
 export default async function Overview() {
   const user = await me();
-  const { t, dict } = await getT();
+  const { t, dict, locale } = await getT();
   if (!isAdmin(user)) {
     const [leads, queue] = await Promise.all([apiGet('/v1/staff/leads/pipeline'), apiGet<any[]>('/v1/staff/viewings/requests')]);
     return (
@@ -42,7 +42,7 @@ export default async function Overview() {
         <Card title={t('pipeline')}>
           <Table head={[t('status'), '#']}>
             {['NEW', 'ASSIGNED', 'CONTACTED', 'VIEWING_SCHEDULED', 'VIEWED', 'NEGOTIATION', 'WON', 'LOST'].map((s) => (
-              <tr key={s}><td>{s.replaceAll('_', ' ').toLowerCase()}</td><td className="num">{(o.leads as any)[s] ?? 0}</td></tr>
+              <tr key={s}><td>{LEAD_STATUS[s]?.[locale] ?? s}</td><td className="num">{(o.leads as any)[s] ?? 0}</td></tr>
             ))}
           </Table>
         </Card>

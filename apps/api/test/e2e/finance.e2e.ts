@@ -132,8 +132,9 @@ describe('rentals, collections, payouts and sales', () => {
       buyerAcceptance: { acceptedAt: now, channel: 'in_person_recorded_by_staff' }, sellerAcceptance: { acceptedAt: now, channel: 'in_person_recorded_by_staff' },
     });
     expect(req.status).toBe(201);
-    // Settings were changed to 3%/3% in an earlier test; the snapshot uses the current version.
-    expect(req.body).toMatchObject({ status: 'PENDING_APPROVAL', sellerCommissionCents: 300_000, buyerCommissionCents: 300_000 });
+    // Current settings (2.5% seller + 2.5% buyer, restored after the settings-change test) on the
+    // final $100,000 price: $2,500 each, $5,000 combined — the specification's worked example.
+    expect(req.body).toMatchObject({ status: 'PENDING_APPROVAL', sellerCommissionCents: 250_000, buyerCommissionCents: 250_000 });
     expect((await emp.api.post(`/v1/staff/sales/${req.body.id}/approve`)).status).toBe(403);
     const ok = await admin.api.post(`/v1/staff/sales/${req.body.id}/approve`);
     expect(ok.status).toBe(201);

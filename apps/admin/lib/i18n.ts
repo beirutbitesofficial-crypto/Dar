@@ -17,6 +17,7 @@ const admin = {
     statement: 'كشف حساب', recordPayout: 'تسجيل تحويل', activate: 'تفعيل', terminate: 'إنهاء مبكر', amend: 'تعديل العقد', renew: 'تجديد',
     create: 'إنشاء', newAgreement: 'عقد جديد', newClosing: 'تسجيل بيع', language: 'English', contactFlag: 'يحتوي معلومات تواصل محتملة',
     privateData: 'بيانات خاصة — يتم تسجيل الاطلاع', calendar: 'التقويم', requests: 'الطلبات', pipeline: 'مسار العملاء', search: 'بحث',
+    adminOnly: 'هالقسم للإدارة بس', adminOnlyHint: 'إذا لازمك توصل لهون، احكي مع مدير النظام.',
   },
   en: {
     overview: 'Overview', moderation: 'Moderation', properties: 'Properties', leads: 'Leads', viewings: 'Viewings',
@@ -32,8 +33,28 @@ const admin = {
     statement: 'Statement', recordPayout: 'Record payout', activate: 'Activate', terminate: 'Terminate early', amend: 'Amend', renew: 'Renew',
     create: 'Create', newAgreement: 'New agreement', newClosing: 'Record sale', language: 'العربية', contactFlag: 'Possible contact details',
     privateData: 'Private data — access is audited', calendar: 'Calendar', requests: 'Requests', pipeline: 'Pipeline', search: 'Search',
+    adminOnly: 'Administrators only', adminOnlyHint: 'Ask an administrator if you need access to this section.',
   },
 } as const;
+
+/** Lead pipeline stages (New → Assigned → Contacted → Viewing scheduled → Viewed → Negotiation → Won/Lost). */
+export const LEAD_STATUS: Record<string, { ar: string; en: string }> = {
+  NEW: { ar: 'جديد', en: 'New' },
+  ASSIGNED: { ar: 'معيّن لموظف', en: 'Assigned' },
+  CONTACTED: { ar: 'تم التواصل', en: 'Contacted' },
+  VIEWING_SCHEDULED: { ar: 'زيارة محددة', en: 'Viewing scheduled' },
+  VIEWED: { ar: 'تمت الزيارة', en: 'Viewed' },
+  NEGOTIATION: { ar: 'مفاوضة', en: 'Negotiation' },
+  WON: { ar: 'نجحت', en: 'Won' },
+  LOST: { ar: 'ما مشي الحال', en: 'Lost' },
+};
+
+/** Rent ledger entry kinds. */
+export const LEDGER_KIND: Record<string, { ar: string; en: string }> = {
+  PAYMENT: { ar: 'دفعة', en: 'Payment' },
+  REVERSAL: { ar: 'قيد عكسي', en: 'Reversal' },
+  REFUND: { ar: 'استرداد', en: 'Refund' },
+};
 
 export type AdminKey = keyof (typeof admin)['ar'];
 
@@ -44,5 +65,7 @@ export async function getLocale(): Promise<Locale> {
 export async function getT() {
   const locale = await getLocale();
   const t = (k: AdminKey) => admin[locale][k];
-  return { t, locale, dict: dictionaries[locale], dir: locale === 'ar' ? 'rtl' : 'ltr' };
+  /** Inline bilingual text: b('عربي', 'English'). */
+  const b = (ar: string, en: string) => (locale === 'en' ? en : ar);
+  return { t, b, locale, dict: dictionaries[locale], dir: locale === 'ar' ? 'rtl' : 'ltr' };
 }

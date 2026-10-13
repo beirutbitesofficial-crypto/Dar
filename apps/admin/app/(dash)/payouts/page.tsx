@@ -4,6 +4,7 @@ import { ApiForm, Badge, Card, Empty, Flash, PageHeader, Table, today } from '@/
 import { apiGet } from '@/lib/api';
 import { usd } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 export default async function Payouts({ searchParams }: { searchParams: Promise<{ owner?: string; ok?: string; error?: string }> }) {
   const sp = await searchParams;
@@ -16,9 +17,9 @@ export default async function Payouts({ searchParams }: { searchParams: Promise<
     <>
       <PageHeader title={t('payouts')} sub="Owners are paid only from rent actually collected for them. A tenant payment never marks an owner as paid." />
       <Flash sp={sp} />
-      <Card title="Owners with a balance">
+      <Card title={<L ar="مالكين إلهم رصيد" en="Owners with a balance" />}>
         {queue.length === 0 ? <Empty text={t('empty')} /> : (
-          <Table head={['Owner', 'Collected for owner', 'Paid out', 'Balance', '']}>
+          <Table head={[<L ar="المالك" en="Owner" />, <L ar="المحصّل للمالك" en="Collected for owner" />, <L ar="المحوَّل" en="Paid out" />, <L ar="الرصيد" en="Balance" />, '']}>
             {queue.map((q) => (
               <tr key={q.ownerId}>
                 <td>{q.ownerName}</td><td className="num">{usd(q.collectedForOwnerCents)}</td><td className="num">{usd(q.paidOutCents)}</td>
@@ -35,7 +36,7 @@ export default async function Payouts({ searchParams }: { searchParams: Promise<
             <p>Payable {usd(statement.totals.payableCents)} · paid out {usd(statement.totals.paidOutCents)}{statement.totals.ownerDebtCents > 0 && <> · <span className="badge red">owed back {usd(statement.totals.ownerDebtCents)}</span></>}</p>
             <ApiForm path="/v1/staff/payouts" back={back} idem className="form">
               <input type="hidden" name="ownerId" value={sp.owner} />
-              <Table head={['', 'Lease', 'Period', dict.rentals.agreedNetRent, dict.rentals.collected, dict.rentals.paidOut, dict.rentals.payable]}>
+              <Table head={['', <L key="l" ar="العقد" en="Lease" />, <L key="p" ar="الفترة" en="Period" />, dict.rentals.agreedNetRent, dict.rentals.collected, dict.rentals.paidOut, dict.rentals.payable]}>
                 {(statement.lines as any[]).map((l) => (
                   <tr key={l.obligationId}>
                     <td>{l.payableCents > 0 && <input type="checkbox" name="list:obligationIds" value={l.obligationId} defaultChecked />}</td>
@@ -47,16 +48,16 @@ export default async function Payouts({ searchParams }: { searchParams: Promise<
               </Table>
               {payable.length > 0 && (
                 <div className="row">
-                  <select name="method"><option value="BANK_TRANSFER">Bank transfer</option><option value="CASH">Cash</option><option value="OTHER">Other</option></select>
-                  <label>Paid on<input type="date" name="paidOn" defaultValue={today()} required /></label>
+                  <select name="method"><option value="BANK_TRANSFER"><L ar="تحويل مصرفي" en="Bank transfer" /></option><option value="CASH"><L ar="نقداً" en="Cash" /></option><option value="OTHER"><L ar="غير ذلك" en="Other" /></option></select>
+                  <label><L ar="تاريخ الدفع" en="Paid on" /><input type="date" name="paidOn" defaultValue={today()} required /></label>
                   <label>{t('reference')}<input name="reference" required /></label>
-                  <ConfirmButton message="Record this payout? Only do this after the money was actually transferred.">{t('recordPayout')}</ConfirmButton>
+                  <ConfirmButton message={'تسجيل التحويل؟ سجّله بس بعد ما المصاري تنحوّل فعلياً.\n\nRecord this payout? Only do this after the money was actually transferred.'}>{t('recordPayout')}</ConfirmButton>
                 </div>
               )}
             </ApiForm>
           </Card>
-          <Card title="Payout history">
-            <Table head={['Ref', 'Kind', 'Date', t('reference'), t('amount'), '']}>
+          <Card title={<L ar="سجل التحويلات" en="Payout history" />}>
+            <Table head={[<L ar="المرجع" en="Ref" />, <L ar="النوع" en="Kind" />, <L ar="التاريخ" en="Date" />, t('reference'), t('amount'), '']}>
               {(statement.payouts as any[]).map((p) => (
                 <tr key={p.id}>
                   <td>{p.ref}</td><td><Badge value={p.kind} /></td><td>{p.paidOn}</td><td>{p.reference}</td><td className="num">{usd(p.totalCents)}</td>
@@ -64,7 +65,7 @@ export default async function Payouts({ searchParams }: { searchParams: Promise<
                     {p.kind === 'PAYOUT' && !(statement.payouts as any[]).some((x) => x.reference === `REVERSAL OF ${p.ref}`) && (
                       <ApiForm path={`/v1/staff/payouts/${p.id}/reverse`} back={back} idem>
                         <input name="reason" placeholder={t('reason')} required minLength={5} />
-                        <ConfirmButton className="danger" message="Reverse this payout record?">{t('reverse')}</ConfirmButton>
+                        <ConfirmButton className="danger" message={'عكس سجل التحويل؟\n\nReverse this payout record?'}>{t('reverse')}</ConfirmButton>
                       </ApiForm>
                     )}
                   </td>

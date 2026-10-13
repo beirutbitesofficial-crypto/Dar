@@ -1,7 +1,7 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Updates from 'expo-updates';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
-import { DevSettings, I18nManager } from 'react-native';
+import { DevSettings, I18nManager, Platform } from 'react-native';
 import { DEFAULT_LOCALE, dictionaries, errorMessage, isRTL, translate, type Dictionary, type Locale, type TKey } from '@dar/shared';
 
 const KEY = 'dar.locale';
@@ -14,12 +14,24 @@ const KEY = 'dar.locale';
 export async function bootLocale(): Promise<Locale> {
   const stored = (await AsyncStorage.getItem(KEY)) as Locale | null;
   const locale: Locale = stored === 'en' || stored === 'ar' ? stored : DEFAULT_LOCALE;
+  if (Platform.OS === 'web') {
+    // react-native-web takes direction from the document; forceRTL is a no-op there,
+    // so reloading would loop forever.
+    applyWebDirection(locale);
+    return locale;
+  }
   I18nManager.allowRTL(true);
   if (I18nManager.isRTL !== isRTL(locale)) {
     I18nManager.forceRTL(isRTL(locale));
     await reload();
   }
   return locale;
+}
+
+function applyWebDirection(locale: Locale) {
+  if (typeof document === 'undefined') return;
+  document.documentElement.dir = isRTL(locale) ? 'rtl' : 'ltr';
+  document.documentElement.lang = locale;
 }
 
 async function reload() {
@@ -47,6 +59,10 @@ export function I18nProvider({ initial, children }: { initial: Locale; children:
   const setLocale = useCallback(async (l: Locale) => {
     await AsyncStorage.setItem(KEY, l);
     setLocaleState(l);
+    if (Platform.OS === 'web') {
+      applyWebDirection(l);
+      return;
+    }
     if (I18nManager.isRTL !== isRTL(l)) {
       I18nManager.forceRTL(isRTL(l));
       await reload();

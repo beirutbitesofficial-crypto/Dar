@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import { submit } from '@/lib/actions';
+import { getLocale } from '@/lib/i18n';
 
 const STATUS_TONE: Record<string, string> = {
   PUBLISHED: 'green', ACTIVE: 'green', PAID: 'green', APPROVED: 'green', CONFIRMED: 'green', WON: 'green', COMPLETED: 'green', SENT: 'green',
@@ -7,8 +8,36 @@ const STATUS_TONE: Record<string, string> = {
   REJECTED: 'red', OVERDUE: 'red', LOST: 'red', CANCELLED: 'red', TERMINATED: 'red', NO_SHOW: 'red', VOID: 'red', FAILED: 'red',
 };
 
-export function Badge({ value, label }: { value: string; label?: string }) {
-  return <span className={`badge ${STATUS_TONE[value] ?? ''}`}>{label ?? value.replaceAll('_', ' ').toLowerCase()}</span>;
+/** Arabic/English names for every status or kind value shown in a badge. */
+const STATUS_LABEL: Record<string, [ar: string, en: string]> = {
+  // listings
+  DRAFT: ['مسودة', 'Draft'], PENDING_REVIEW: ['قيد المراجعة', 'Pending review'], PUBLISHED: ['منشور', 'Published'], REJECTED: ['مرفوض', 'Rejected'],
+  PAUSED: ['موقوف مؤقتاً', 'Paused'], RENTED: ['مؤجّر', 'Rented'], SOLD: ['مباع', 'Sold'], ARCHIVED: ['مؤرشف', 'Archived'],
+  // reviews, approvals
+  PENDING: ['معلّق', 'Pending'], APPROVED: ['موافَق عليه', 'Approved'], WITHDRAWN: ['مسحوب', 'Withdrawn'], PENDING_APPROVAL: ['بانتظار الموافقة', 'Pending approval'],
+  // leads
+  NEW: ['جديد', 'New'], ASSIGNED: ['معيّن لموظف', 'Assigned'], CONTACTED: ['تم التواصل', 'Contacted'], VIEWING_SCHEDULED: ['زيارة محددة', 'Viewing scheduled'],
+  VIEWED: ['تمت الزيارة', 'Viewed'], NEGOTIATION: ['مفاوضة', 'Negotiation'], WON: ['نجحت', 'Won'], LOST: ['ما مشي الحال', 'Lost'],
+  // viewings
+  REQUESTED: ['مطلوبة', 'Requested'], CONFIRMED: ['مؤكدة', 'Confirmed'], COMPLETED: ['مكتملة', 'Completed'], NO_SHOW: ['ما حدا إجا', 'No-show'], CANCELLED: ['ملغى', 'Cancelled'],
+  // agreements
+  ACTIVE: ['ساري', 'Active'], ENDED: ['منتهي', 'Ended'], TERMINATED: ['منهى مبكراً', 'Terminated'],
+  // money
+  UPCOMING: ['قادم', 'Upcoming'], DUE: ['مستحق', 'Due'], OVERDUE: ['متأخّر', 'Overdue'], PARTIALLY_PAID: ['مدفوع جزئياً', 'Partially paid'], PAID: ['مدفوع', 'Paid'],
+  WAIVED: ['معفى', 'Waived'], REFUNDED: ['مسترد', 'Refunded'], VOID: ['ملغى', 'Void'],
+  PAYMENT: ['دفعة', 'Payment'], REVERSAL: ['قيد عكسي', 'Reversal'], REFUND: ['استرداد', 'Refund'], PAYOUT: ['تحويل للمالك', 'Payout'],
+  RECEIVED: ['مستلَم', 'Received'], RETURNED: ['مُرجَع', 'Returned'], APPLIED_TO_DAMAGES: ['مخصوم للأضرار', 'Applied to damages'],
+  // misc
+  OPEN: ['مفتوح', 'Open'], RESOLVED: ['محلول', 'Resolved'], DISMISSED: ['مرفوض', 'Dismissed'], SENT: ['مُرسل', 'Sent'], FAILED: ['فشل', 'Failed'],
+  QUEUED: ['بالانتظار', 'Queued'], UNCONFIGURED: ['غير مفعّل', 'Not configured'], NOT_REQUESTED: ['غير مطلوب', 'Not requested'],
+  SALE: ['بيع', 'Sale'], RENT: ['إيجار', 'Rent'], BUYER: ['المشتري', 'Buyer'], SELLER: ['البائع', 'Seller'],
+};
+
+/** Status pill. Server component: picks Arabic or English from the dashboard language. */
+export async function Badge({ value, label }: { value: string; label?: string }) {
+  const known = STATUS_LABEL[value];
+  const text = label ?? (known ? known[(await getLocale()) === 'en' ? 1 : 0] : value.replaceAll('_', ' ').toLowerCase());
+  return <span className={`badge ${STATUS_TONE[value] ?? ''}`}>{text}</span>;
 }
 
 export function DemoBadge({ show, label = 'Demo' }: { show?: boolean; label?: string }) {

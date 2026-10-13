@@ -3,6 +3,7 @@ import { ApiForm, Badge, Card, Empty, Flash, PageHeader, Table } from '@/compone
 import { apiGet } from '@/lib/api';
 import { dateTime } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 export default async function Viewings({ searchParams }: { searchParams: Promise<{ ok?: string; error?: string }> }) {
   const sp = await searchParams;
@@ -21,7 +22,7 @@ export default async function Viewings({ searchParams }: { searchParams: Promise
       <Flash sp={sp} />
       <Card title={t('requests')}>
         {queue.length === 0 ? <Empty text={t('empty')} /> : (
-          <Table head={['Listing', 'Customer', 'Preferred', 'Notes', t('confirm')]}>
+          <Table head={[<L ar="الإعلان" en="Listing" />, <L ar="الزبون" en="Customer" />, <L ar="المواعيد المفضّلة" en="Preferred" />, <L ar="ملاحظات" en="Notes" />, t('confirm')]}>
             {queue.map((v) => (
               <tr key={v.id}>
                 <td>{v.propertyRef}<div className="sub">{v.propertyTitle}</div></td>
@@ -44,7 +45,7 @@ export default async function Viewings({ searchParams }: { searchParams: Promise
       </Card>
       <Card title={`${t('calendar')} (21d)`}>
         {calendar.length === 0 ? <Empty text={t('empty')} /> : (
-          <Table head={[t('date'), 'Listing', 'Customer', t('employee'), t('status'), '']}>
+          <Table head={[t('date'), <L ar="الإعلان" en="Listing" />, <L ar="الزبون" en="Customer" />, t('employee'), t('status'), '']}>
             {calendar.map((v) => (
               <tr key={v.id}>
                 <td>{dateTime(v.scheduledAt, locale)}</td>
@@ -56,7 +57,7 @@ export default async function Viewings({ searchParams }: { searchParams: Promise
                   {v.status === 'CONFIRMED' && (
                     <ApiForm path={`/v1/staff/viewings/${v.id}/outcome`} back="/viewings">
                       <select name="status"><option value="COMPLETED">{dict.viewingStatus.COMPLETED}</option><option value="NO_SHOW">{dict.viewingStatus.NO_SHOW}</option><option value="CANCELLED">{dict.viewingStatus.CANCELLED}</option></select>
-                      <input name="notes" placeholder="Notes" />
+                      <input name="notes" placeholder="ملاحظات · Notes" />
                       <button className="secondary">{t('save')}</button>
                     </ApiForm>
                   )}
@@ -76,7 +77,7 @@ function ConfirmFields() {
     <>
       <input type="datetime-local" name="scheduledAtLocal" required />
       <select name="num:durationMinutes" defaultValue="45"><option value="30">30m</option><option value="45">45m</option><option value="60">60m</option><option value="90">90m</option></select>
-      <input name="meetingInstructions" placeholder="Meeting point / instructions (sent to customer)" />
+      <input name="meetingInstructions" placeholder="مكان اللقاء / تعليمات (بتنبعت للزبون) · Meeting point / instructions (sent to customer)" />
     </>
   );
 }

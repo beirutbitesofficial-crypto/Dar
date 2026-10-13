@@ -122,3 +122,5 @@ button.link { background: none; border: 0; color: var(--primary); padding: 0; mi
 @media (prefers-reduced-motion: no-preference) {
   .nav a, button, .btn { transition: background-color 0.15s ease, color 0.15s ease; }
 }
+
+.nowrap { white-space: nowrap; }

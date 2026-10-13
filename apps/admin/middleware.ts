@@ -22,7 +22,11 @@ export async function middleware(req: NextRequest) {
   const access = req.cookies.get(ACCESS)?.value;
   const refresh = req.cookies.get(REFRESH)?.value;
   if (!refresh) return NextResponse.redirect(new URL('/login', req.url));
-  if (!expiresSoon(access)) return NextResponse.next();
+  // Tell the dashboard layout which section is being rendered (used to show a
+  // clear "admins only" notice; the API enforces the actual permission).
+  const pathHeaders = new Headers(req.headers);
+  pathHeaders.set('x-dar-path', pathname);
+  if (!expiresSoon(access)) return NextResponse.next({ request: { headers: pathHeaders } });
 
   const r = await fetch(`${API_URL}/v1/auth/refresh`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ refreshToken: refresh }) });
   if (!r.ok) {
@@ -33,7 +37,7 @@ export async function middleware(req: NextRequest) {
   }
   const t = await r.json();
   // Make the new token visible to server components rendering this request.
-  const headers = new Headers(req.headers);
+  const headers = pathHeaders;
   const cookie = (req.headers.get('cookie') ?? '').split('; ').filter((c) => !c.startsWith(`${ACCESS}=`) && !c.startsWith(`${REFRESH}=`));
   cookie.push(`${ACCESS}=${t.accessToken}`, `${REFRESH}=${t.refreshToken}`);
   headers.set('cookie', cookie.join('; '));

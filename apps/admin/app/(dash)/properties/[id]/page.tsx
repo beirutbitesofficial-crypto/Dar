@@ -4,6 +4,7 @@ import { ApiForm, Badge, Card, DemoBadge, Flash, PageHeader } from '@/components
 import { apiGet, isAdmin, me } from '@/lib/api';
 import { date, dateTime, usd } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 export default async function PropertyRecord({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ ok?: string; error?: string }> }) {
   const [{ id }, sp] = await Promise.all([params, searchParams]);
@@ -35,7 +36,7 @@ export default async function PropertyRecord({ params, searchParams }: { params:
                   {employees.map((e) => <option key={e.id} value={e.id}>{e.fullName} ({e._count.assignedLeads})</option>)}
                 </select>
               </label>
-              <label><span>★</span><select name="bool:featured" defaultValue="false"><option value="false">—</option><option value="true">Featured</option></select></label>
+              <label><span>★</span><select name="bool:featured" defaultValue="false"><option value="false">—</option><option value="true"><L ar="مميّز" en="Featured" /></option></select></label>
               <button>{t('approve')}</button>
             </ApiForm>
             <ApiForm path={`/v1/admin/moderation/properties/${id}/decision`} back={back}>
@@ -50,7 +51,7 @@ export default async function PropertyRecord({ params, searchParams }: { params:
       <div className="grid g2">
         <Card title={dict.property.specs}>
           <dl className="kv">
-            <dt>Type</dt><dd>{p.listingType && dict.listingType[p.listingType as 'SALE']} · {p.propertyType && dict.propertyType[p.propertyType as 'LAND']}</dd>
+            <dt><L ar="النوع" en="Type" /></dt><dd>{p.listingType && dict.listingType[p.listingType as 'SALE']} · {p.propertyType && dict.propertyType[p.propertyType as 'LAND']}</dd>
             <dt>{dict.property.location}</dt><dd>{name(p.area)} › {name(p.town)}{p.neighborhood ? ` › ${name(p.neighborhood)}` : ''}</dd>
             <dt>{p.listingType === 'RENT' ? dict.owner.netRent : dict.property.askingPrice}</dt><dd>{usd(p.priceCents)} {p.rentPricingMode && <span className="sub">({p.rentPricingMode})</span>}</dd>
             {p.estimate && p.listingType === 'SALE' && (<><dt>{dict.owner.sellerCommission.replace('{rate}', formatBasisPoints(p.estimate.sellerBps))}</dt><dd>{usd(p.estimate.sellerCommissionCents)} → {usd(p.estimate.sellerProceedsCents)}</dd></>)}
@@ -71,13 +72,13 @@ export default async function PropertyRecord({ params, searchParams }: { params:
 
         <Card title={t('privateData')} className="private">
           <dl className="kv">
-            <dt>Owner account</dt><dd>{p.owner.fullName} · <span dir="ltr">{p.owner.phone}</span> · <span dir="ltr">{p.owner.email}</span></dd>
+            <dt><L ar="حساب المالك" en="Owner account" /></dt><dd>{p.owner.fullName} · <span dir="ltr">{p.owner.phone}</span> · <span dir="ltr">{p.owner.email}</span></dd>
             <dt>{dict.owner.contactName}</dt><dd>{p.ownerContactName ?? '—'}</dd>
             <dt>{dict.owner.contactPhone}</dt><dd dir="ltr">{p.ownerContactPhone ?? '—'}</dd>
             <dt>{dict.owner.contactEmail}</dt><dd dir="ltr">{p.ownerContactEmail ?? '—'}</dd>
             <dt>{dict.owner.exactAddress}</dt><dd>{p.exactAddress ?? '—'}</dd>
-            <dt>GPS</dt><dd dir="ltr">{p.latitude ? `${p.latitude}, ${p.longitude}` : '—'}</dd>
-            <dt>Owner notes</dt><dd>{p.ownerNotesForStaff ?? '—'}</dd>
+            <dt><L ar="GPS" en="GPS" /></dt><dd dir="ltr">{p.latitude ? `${p.latitude}, ${p.longitude}` : '—'}</dd>
+            <dt><L ar="ملاحظات المالك" en="Owner notes" /></dt><dd>{p.ownerNotesForStaff ?? '—'}</dd>
           </dl>
           <h3 style={{ marginTop: 16 }}>{dict.owner.documents}</h3>
           {(p.media as any[]).filter((m) => m.kind === 'DOCUMENT').map((m) => (
@@ -113,7 +114,7 @@ export default async function PropertyRecord({ params, searchParams }: { params:
               <button className="secondary">{t('save')}</button>
             </ApiForm>
             <ApiForm path={`/v1/admin/moderation/properties/${id}/featured`} method="PUT" back={back} className="inline">
-              <select name="bool:featured" defaultValue={String(p.featured)}><option value="true">★ Featured</option><option value="false">Not featured</option></select>
+              <select name="bool:featured" defaultValue={String(p.featured)}><option value="true">★ Featured</option><option value="false"><L ar="غير مميّز" en="Not featured" /></option></select>
               <input name="num:rank" type="number" min={0} defaultValue={p.featuredRank} style={{ width: 90 }} />
               <button className="secondary">{t('save')}</button>
             </ApiForm>
@@ -125,13 +126,13 @@ export default async function PropertyRecord({ params, searchParams }: { params:
             <input name="reason" placeholder={t('reason')} />
             <button className="secondary" disabled={p.allowedTransitions.length === 0}>{t('save')}</button>
           </ApiForm>
-          <p className="sub" style={{ marginTop: 8 }}>Sold / rented are set automatically by approved closings and activated leases.</p>
+          <p className="sub" style={{ marginTop: 8 }}><L ar="حالة «مباع» و«مؤجّر» بتتعيّن تلقائياً لما ينوافق على البيع أو يتفعّل عقد الإيجار." en="Sold / rented are set automatically by approved closings and activated leases." /></p>
         </Card>
       </div>
 
       <Card title={t('notes')}>
         <ApiForm path={`/v1/staff/properties/${id}/notes`} back={back} className="form">
-          <textarea name="body" required placeholder="Staff only — never shown to owners or customers" />
+          <textarea name="body" required placeholder="للموظفين بس — ما بتبيّن للمالكين أو الزباين · Staff only — never shown to owners or customers" />
           <div><button className="secondary">{t('addNote')}</button></div>
         </ApiForm>
         {(p.internalNotes as any[]).map((n) => <p key={n.id}><span className="sub">{dateTime(n.createdAt, locale)}</span><br />{n.body}</p>)}

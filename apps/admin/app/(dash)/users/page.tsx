@@ -3,6 +3,7 @@ import { ApiForm, Card, DemoBadge, Flash, PageHeader, Table } from '@/components
 import { apiGet } from '@/lib/api';
 import { date } from '@/lib/format';
 import { getT } from '@/lib/i18n';
+import { L } from '@/components/l';
 
 const ROLES = ['CUSTOMER', 'OWNER', 'EMPLOYEE', 'ADMIN'] as const;
 
@@ -17,21 +18,21 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
       <Flash sp={sp} />
       <form className="row card" style={{ padding: 14 }}>
         <label>{t('search')}<input name="q" defaultValue={sp.q} /></label>
-        <label>Role<select name="role" defaultValue={sp.role ?? ''}><option value="">—</option>{ROLES.map((r) => <option key={r}>{r}</option>)}</select></label>
+        <label><L ar="الدور" en="Role" /><select name="role" defaultValue={sp.role ?? ''}><option value="">—</option>{ROLES.map((r) => <option key={r}>{r}</option>)}</select></label>
         <button className="secondary">{t('search')}</button>
       </form>
       {deletions.length > 0 && (
-        <Card title="Account deletion requests">
+        <Card title={<L ar="طلبات حذف الحساب" en="Account deletion requests" />}>
           <p className="sub">Review active leases and balances first. Completing anonymizes personal data; financial records are kept for the legal retention period (docs/PRIVACY_RETENTION.md).</p>
           {deletions.map((d) => (
             <div key={d.id} className="row">
               <span>{d.user.fullName} · {d.user.email} · {date(d.requestedAt, locale)} — {d.reason}</span>
-              <ApiForm path={`/v1/admin/deletion-requests/${d.id}/complete`} back="/users"><ConfirmButton className="danger" message="Anonymize this account? This cannot be undone.">Anonymize</ConfirmButton></ApiForm>
+              <ApiForm path={`/v1/admin/deletion-requests/${d.id}/complete`} back="/users"><ConfirmButton className="danger" message={'إخفاء هوية هالحساب؟ ما فينا نرجع عنها.\n\nAnonymize this account? This cannot be undone.'}><L ar="إخفاء الهوية" en="Anonymize" /></ConfirmButton></ApiForm>
             </div>
           ))}
         </Card>
       )}
-      <Table head={['Name', 'Email', 'Phone', 'Roles', 'Open leads', t('actions')]}>
+      <Table head={[<L ar="الاسم" en="Name" />, <L ar="الإيميل" en="Email" />, <L ar="التلفون" en="Phone" />, <L ar="الأدوار" en="Roles" />, <L ar="عملاء مفتوحين" en="Open leads" />, t('actions')]}>
         {data.items.map((u: any) => (
           <tr key={u.id}>
             <td>{u.fullName} <DemoBadge show={u.demo} label={t('demo')} /> {u.blocked && <span className="badge red">blocked</span>}</td>
@@ -41,11 +42,11 @@ export default async function Users({ searchParams }: { searchParams: Promise<{ 
             <td className="num">{u._count.assignedLeads}</td>
             <td>
               <details>
-                <summary>Edit</summary>
+                <summary><L ar="تعديل" en="Edit" /></summary>
                 <ApiForm path={`/v1/admin/users/${u.id}/roles`} method="PUT" back="/users" className="form">
                   <div className="row">{ROLES.map((r) => <label key={r}><span><input type="checkbox" name="list:roles" value={r} defaultChecked={u.roles.includes(r)} /> {r}</span></label>)}</div>
-                  <select name="bool:canRecordCollections" defaultValue={String(u.canRecordCollections)}><option value="false">Cannot record collections</option><option value="true">Can record collections (assigned leases)</option></select>
-                  <select name="bool:blocked" defaultValue={String(u.blocked)}><option value="false">Active</option><option value="true">Blocked</option></select>
+                  <select name="bool:canRecordCollections" defaultValue={String(u.canRecordCollections)}><option value="false"><L ar="ما فيه يسجّل تحصيل" en="Cannot record collections" /></option><option value="true"><L ar="فيه يسجّل تحصيل (للعقود المعيّنة إلو)" en="Can record collections (assigned leases)" /></option></select>
+                  <select name="bool:blocked" defaultValue={String(u.blocked)}><option value="false"><L ar="فعّال" en="Active" /></option><option value="true"><L ar="محظور" en="Blocked" /></option></select>
                   <input name="reason" placeholder={t('reason')} required minLength={5} />
                   <div><button className="secondary">{t('save')}</button></div>
                 </ApiForm>
