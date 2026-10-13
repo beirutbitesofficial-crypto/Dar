@@ -1,0 +1,47 @@
+# Local development services only. Not a production deployment.
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: dar
+      POSTGRES_PASSWORD: dar_local_dev
+      POSTGRES_DB: dar
+    ports:
+      - "5432:5432"
+    volumes:
+      - dar_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dar"]
+      interval: 5s
+      retries: 10
+
+  # S3-compatible private object storage for local development.
+  minio:
+    image: minio/minio:latest
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: dar_minio
+      MINIO_ROOT_PASSWORD: dar_minio_local_dev
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - dar_minio:/data
+
+  # Creates the private bucket (no anonymous access policy is set).
+  minio-init:
+    image: minio/mc:latest
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c "
+      sleep 3;
+      mc alias set local http://minio:9000 dar_minio dar_minio_local_dev;
+      mc mb --ignore-existing local/dar-private;
+      mc anonymous set none local/dar-private;
+      exit 0;
+      "
+
+volumes:
+  dar_pg:
+  dar_minio:

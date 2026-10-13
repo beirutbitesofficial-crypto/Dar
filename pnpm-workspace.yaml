@@ -1,0 +1,14 @@
+packages:
+  - "apps/*"
+  - "packages/*"
+
+# Expo / React Native resolve dependencies through node_modules symlinks.
+# See apps/mobile/README.md for the metro config that supports pnpm.
+onlyBuiltDependencies:
+  - "@prisma/client"
+  - "@prisma/engines"
+  - prisma
+  - argon2
+  - sharp
+  - esbuild
+  - "@nestjs/core"

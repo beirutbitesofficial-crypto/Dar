@@ -1,0 +1,1063 @@
+// Dar — database schema.
+//
+// Conventions
+// - Money is BIGINT integer US cents. Rates are integer basis points.
+// - Calendar dates (rent periods, due dates, availability) use @db.Date.
+// - Financial history is append-only. PostgreSQL triggers in the migrations
+//   reject UPDATE/DELETE on ledger tables and enforce amount invariants.
+// - "One active X" rules use a nullable key column with a unique index
+//   (e.g. Lead.openKey), which Prisma can express and the database enforces.
+// - Constraints Prisma cannot express (CHECKs, triggers, an exclusion
+//   constraint against double-booked viewings) live in migration SQL and are
+//   documented in docs/DATABASE.md.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  CUSTOMER
+  OWNER
+  EMPLOYEE
+  ADMIN
+}
+
+enum ListingType {
+  SALE
+  RENT
+}
+
+enum PropertyType {
+  APARTMENT
+  HOUSE_VILLA
+  LAND
+  COMMERCIAL
+}
+
+enum ListingStatus {
+  DRAFT
+  PENDING_REVIEW
+  PUBLISHED
+  REJECTED
+  PAUSED
+  RENTED
+  SOLD
+  ARCHIVED
+}
+
+enum RentalPricingMode {
+  NET_PLUS_FEE
+  TOTAL_MINUS_FEE
+}
+
+enum LocationKind {
+  AREA
+  TOWN
+  NEIGHBORHOOD
+}
+
+enum MediaKind {
+  PHOTO
+  VIDEO
+  DOCUMENT
+  MESSAGE_ATTACHMENT
+}
+
+enum MediaStatus {
+  UPLOADING
+  PROCESSING
+  READY
+  FAILED
+}
+
+enum ReviewStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum RevisionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  WITHDRAWN
+}
+
+enum LeadStatus {
+  NEW
+  ASSIGNED
+  CONTACTED
+  VIEWING_SCHEDULED
+  VIEWED
+  NEGOTIATION
+  WON
+  LOST
+}
+
+enum LeadSource {
+  VIEWING_REQUEST
+  MESSAGE
+  STAFF
+}
+
+enum ViewingStatus {
+  REQUESTED
+  CONFIRMED
+  COMPLETED
+  NO_SHOW
+  CANCELLED
+}
+
+enum SenderRole {
+  CUSTOMER
+  STAFF
+  SYSTEM
+}
+
+enum ReportTarget {
+  LISTING
+  MESSAGE
+  USER
+}
+
+enum ReportStatus {
+  OPEN
+  RESOLVED
+  DISMISSED
+}
+
+enum NoteEntity {
+  LEAD
+  PROPERTY
+  CONVERSATION
+  AGREEMENT
+  USER
+  CLOSING
+}
+
+enum SaleClosingStatus {
+  PENDING_APPROVAL
+  APPROVED
+  CANCELLED
+}
+
+enum SaleParty {
+  BUYER
+  SELLER
+}
+
+enum LedgerKind {
+  PAYMENT
+  REVERSAL
+  REFUND
+}
+
+enum PaymentMethod {
+  CASH
+  BANK_TRANSFER
+  OTHER
+}
+
+enum AgreementStatus {
+  DRAFT
+  ACTIVE
+  ENDED
+  TERMINATED
+  CANCELLED
+}
+
+enum ProrationPolicy {
+  NONE
+  DAILY
+}
+
+enum AcceptanceChannel {
+  mobile
+  admin
+  in_person_recorded_by_staff
+}
+
+enum DepositEntryKind {
+  RECEIVED
+  RETURNED
+  APPLIED_TO_DAMAGES
+}
+
+enum PayoutKind {
+  PAYOUT
+  REVERSAL
+}
+
+enum PushStatus {
+  NOT_REQUESTED
+  QUEUED
+  SENT
+  FAILED
+  UNCONFIGURED
+}
+
+enum DeletionStatus {
+  PENDING
+  COMPLETED
+  REJECTED
+}
+
+enum LegalKind {
+  TERMS
+  PRIVACY
+}
+
+// ---------------------------------------------------------------------------
+// Identity
+// ---------------------------------------------------------------------------
+
+model User {
+  id                   String    @id @default(cuid())
+  email                String    @unique
+  passwordHash         String
+  fullName             String
+  phone                String?
+  phoneVerifiedAt      DateTime?
+  roles                Role[]    @default([CUSTOMER])
+  canRecordCollections Boolean   @default(false)
+  blocked              Boolean   @default(false)
+  blockedReason        String?
+  locale               String    @default("ar")
+  termsAcceptedVersion String?
+  termsAcceptedAt      DateTime?
+  failedLoginCount     Int       @default(0)
+  lockedUntil          DateTime?
+  deletionRequestedAt  DateTime?
+  anonymizedAt         DateTime?
+  demo                 Boolean   @default(false)
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
+
+  sessions             Session[]
+  resetTokens          PasswordResetToken[]
+  pushTokens           PushToken[]
+  ownedProperties      Property[]           @relation("PropertyOwner")
+  assignedProperties   Property[]           @relation("PropertyEmployee")
+  favorites            Favorite[]
+  viewingRequests      ViewingRequest[]     @relation("ViewingCustomer")
+  assignedViewings     ViewingRequest[]     @relation("ViewingEmployee")
+  customerLeads        Lead[]               @relation("LeadCustomer")
+  assignedLeads        Lead[]               @relation("LeadEmployee")
+  customerConversations Conversation[]      @relation("ConversationCustomer")
+  staffConversations   Conversation[]       @relation("ConversationEmployee")
+  messages             Message[]
+  notifications        Notification[]
+  reports              Report[]             @relation("ReportReporter")
+  deletionRequests     AccountDeletionRequest[] @relation("DeletionUser")
+  uploads              Media[]              @relation("MediaUploader")
+  landlordAgreements   RentalAgreement[]    @relation("AgreementLandlord")
+  tenantAgreements     RentalAgreement[]    @relation("AgreementTenant")
+  employeeAgreements   RentalAgreement[]    @relation("AgreementEmployee")
+  sellerClosings       SaleClosing[]        @relation("ClosingSeller")
+  buyerClosings        SaleClosing[]        @relation("ClosingBuyer")
+  ownerPayouts         OwnerPayout[]        @relation("PayoutOwner")
+
+  @@index([roles])
+}
+
+model Session {
+  id               String    @id @default(cuid())
+  userId           String
+  refreshTokenHash String    @unique
+  device           String
+  userAgent        String?
+  familyId         String
+  createdAt        DateTime  @default(now())
+  lastUsedAt       DateTime  @default(now())
+  expiresAt        DateTime
+  revokedAt        DateTime?
+  revokedReason    String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([familyId])
+}
+
+model PasswordResetToken {
+  id        String    @id @default(cuid())
+  userId    String
+  tokenHash String    @unique
+  expiresAt DateTime
+  usedAt    DateTime?
+  createdAt DateTime  @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model PushToken {
+  id         String    @id @default(cuid())
+  userId     String
+  token      String    @unique
+  platform   String
+  createdAt  DateTime  @default(now())
+  lastSeenAt DateTime  @default(now())
+  disabledAt DateTime?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+model AccountDeletionRequest {
+  id            String         @id @default(cuid())
+  userId        String
+  reason        String?
+  status        DeletionStatus @default(PENDING)
+  requestedAt   DateTime       @default(now())
+  processedAt   DateTime?
+  processedById String?
+  notes         String?
+
+  user User @relation("DeletionUser", fields: [userId], references: [id])
+
+  @@index([status])
+  @@index([userId])
+}
+
+// ---------------------------------------------------------------------------
+// Directory
+// ---------------------------------------------------------------------------
+
+model Location {
+  id        String       @id @default(cuid())
+  kind      LocationKind
+  nameAr    String
+  nameEn    String
+  slug      String       @unique
+  parentId  String?
+  lat       Decimal?     @db.Decimal(9, 6)
+  lng       Decimal?     @db.Decimal(9, 6)
+  active    Boolean      @default(true)
+  sortOrder Int          @default(0)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+
+  parent           Location?  @relation("LocationTree", fields: [parentId], references: [id])
+  children         Location[] @relation("LocationTree")
+  areaProperties   Property[] @relation("PropertyArea")
+  townProperties   Property[] @relation("PropertyTown")
+  hoodProperties   Property[] @relation("PropertyNeighborhood")
+
+  @@index([parentId])
+  @@index([kind, active])
+}
+
+model Amenity {
+  key       String         @id
+  labelAr   String
+  labelEn   String
+  appliesTo PropertyType[]
+  active    Boolean        @default(true)
+  sortOrder Int            @default(0)
+}
+
+// ---------------------------------------------------------------------------
+// Properties
+// ---------------------------------------------------------------------------
+
+model Property {
+  id                 String             @id @default(cuid())
+  refNo              Int                @unique @default(autoincrement())
+  ownerId            String
+  assignedEmployeeId String?
+  status             ListingStatus      @default(DRAFT)
+  listingType        ListingType?
+  propertyType       PropertyType?
+  titleAr            String?
+  titleEn            String?
+  descriptionAr      String?
+  descriptionEn      String?
+  areaId             String?
+  townId             String?
+  neighborhoodId     String?
+  // --- private: never serialized publicly ---
+  exactAddress       String?
+  latitude           Decimal?           @db.Decimal(9, 6)
+  longitude          Decimal?           @db.Decimal(9, 6)
+  ownerContactName   String?
+  ownerContactPhone  String?
+  ownerContactEmail  String?
+  ownerNotesForStaff String?
+  contactFlags       Json?
+  // --- end private ---
+  priceCents         BigInt?
+  rentPricingMode    RentalPricingMode?
+  sizeSqm            Int?
+  bedrooms           Int?
+  bathrooms          Int?
+  floor              Int?
+  totalFloors        Int?
+  furnished          Boolean?
+  amenities          String[]           @default([])
+  otherAmenities     String?
+  availableFrom      DateTime?          @db.Date
+  featured           Boolean            @default(false)
+  featuredRank       Int                @default(0)
+  demo               Boolean            @default(false)
+  rejectionReason    String?
+  submittedAt        DateTime?
+  approvedAt         DateTime?
+  approvedById       String?
+  publishedAt        DateTime?
+  version            Int                @default(0)
+  createdAt          DateTime           @default(now())
+  updatedAt          DateTime           @updatedAt
+
+  owner            User               @relation("PropertyOwner", fields: [ownerId], references: [id])
+  assignedEmployee User?              @relation("PropertyEmployee", fields: [assignedEmployeeId], references: [id])
+  area             Location?          @relation("PropertyArea", fields: [areaId], references: [id])
+  town             Location?          @relation("PropertyTown", fields: [townId], references: [id])
+  neighborhood     Location?          @relation("PropertyNeighborhood", fields: [neighborhoodId], references: [id])
+  media            Media[]
+  revisions        PropertyRevision[]
+  favorites        Favorite[]
+  viewings         ViewingRequest[]
+  leads            Lead[]
+  conversations    Conversation[]
+  closings         SaleClosing[]
+  agreements       RentalAgreement[]
+
+  @@index([status, listingType, areaId])
+  @@index([status, townId])
+  @@index([status, featured, featuredRank])
+  @@index([status, publishedAt])
+  @@index([priceCents])
+  @@index([ownerId])
+  @@index([assignedEmployeeId])
+}
+
+model PropertyRevision {
+  id            String         @id @default(cuid())
+  propertyId    String
+  changes       Json
+  contactFlags  Json?
+  status        RevisionStatus @default(PENDING)
+  /// Equals propertyId while PENDING, NULL otherwise: one pending revision per listing.
+  pendingKey    String?        @unique
+  submittedById String
+  reviewedById  String?
+  reviewReason  String?
+  createdAt     DateTime       @default(now())
+  reviewedAt    DateTime?
+
+  property Property @relation(fields: [propertyId], references: [id])
+
+  @@index([propertyId])
+  @@index([status])
+}
+
+model Media {
+  id           String       @id @default(cuid())
+  kind         MediaKind
+  status       MediaStatus  @default(UPLOADING)
+  reviewStatus ReviewStatus @default(PENDING)
+  reviewReason String?
+  reviewedById String?
+  uploaderId   String
+  propertyId   String?
+  messageId    String?
+  incomingKey  String       @unique
+  storageKey   String?      @unique
+  fileName     String
+  mimeType     String
+  sizeBytes    Int
+  width        Int?
+  height       Int?
+  sha256       String?
+  sortOrder    Int          @default(0)
+  isCover      Boolean      @default(false)
+  ocrText      String?
+  failureCode  String?
+  removedAt    DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  uploader User      @relation("MediaUploader", fields: [uploaderId], references: [id])
+  property Property? @relation(fields: [propertyId], references: [id])
+  message  Message?  @relation(fields: [messageId], references: [id])
+
+  @@index([propertyId, kind, sortOrder])
+  @@index([reviewStatus])
+  @@index([messageId])
+}
+
+model Favorite {
+  userId     String
+  propertyId String
+  createdAt  DateTime @default(now())
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+
+  @@id([userId, propertyId])
+  @@index([propertyId])
+}
+
+// ---------------------------------------------------------------------------
+// Viewings, leads, conversations
+// ---------------------------------------------------------------------------
+
+model ViewingRequest {
+  id                  String        @id @default(cuid())
+  propertyId          String
+  customerId          String
+  leadId              String?
+  assignedEmployeeId  String?
+  status              ViewingStatus @default(REQUESTED)
+  preferredSlots      Json
+  customerNotes       String?
+  scheduledAt         DateTime?
+  scheduledEndsAt     DateTime?
+  meetingInstructions String?
+  outcomeNotes        String?
+  cancelledReason     String?
+  // Fee disclosure snapshot accepted by the customer before submission.
+  disclosedKind        ListingType
+  disclosedAmountCents BigInt
+  disclosedRateBps     Int?
+  termsVersion         String
+  settingsVersion      Int
+  acceptedAt           DateTime
+  idempotencyKey       String        @unique
+  version              Int           @default(0)
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  property         Property @relation(fields: [propertyId], references: [id])
+  customer         User     @relation("ViewingCustomer", fields: [customerId], references: [id])
+  assignedEmployee User?    @relation("ViewingEmployee", fields: [assignedEmployeeId], references: [id])
+  lead             Lead?    @relation(fields: [leadId], references: [id])
+
+  @@index([customerId])
+  @@index([propertyId])
+  @@index([assignedEmployeeId, scheduledAt])
+  @@index([status])
+}
+
+model Lead {
+  id                 String     @id @default(cuid())
+  propertyId         String
+  customerId         String
+  assignedEmployeeId String?
+  status             LeadStatus @default(NEW)
+  source             LeadSource
+  lostReason         String?
+  /// "propertyId:customerId" while the lead is open; NULL once WON/LOST.
+  openKey            String?    @unique
+  version            Int        @default(0)
+  wonAt              DateTime?
+  closedAt           DateTime?
+  createdAt          DateTime   @default(now())
+  updatedAt          DateTime   @updatedAt
+
+  property         Property         @relation(fields: [propertyId], references: [id])
+  customer         User             @relation("LeadCustomer", fields: [customerId], references: [id])
+  assignedEmployee User?            @relation("LeadEmployee", fields: [assignedEmployeeId], references: [id])
+  events           LeadEvent[]
+  offers           Offer[]
+  viewings         ViewingRequest[]
+  conversations    Conversation[]
+
+  @@index([assignedEmployeeId, status])
+  @@index([status])
+  @@index([propertyId])
+}
+
+model LeadEvent {
+  id         String      @id @default(cuid())
+  leadId     String
+  actorId    String?
+  type       String
+  fromStatus LeadStatus?
+  toStatus   LeadStatus?
+  data       Json?
+  createdAt  DateTime    @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id])
+
+  @@index([leadId, createdAt])
+}
+
+model Offer {
+  id           String    @id @default(cuid())
+  leadId       String
+  amountCents  BigInt
+  party        String
+  notes        String?
+  recordedById String
+  createdAt    DateTime  @default(now())
+
+  lead Lead @relation(fields: [leadId], references: [id])
+
+  @@index([leadId])
+}
+
+model InternalNote {
+  id         String     @id @default(cuid())
+  entityType NoteEntity
+  entityId   String
+  authorId   String
+  body       String
+  createdAt  DateTime   @default(now())
+
+  @@index([entityType, entityId, createdAt])
+}
+
+model Conversation {
+  id                 String    @id @default(cuid())
+  customerId         String
+  assignedEmployeeId String?
+  propertyId         String?
+  leadId             String?
+  subject            String
+  closedAt           DateTime?
+  lastMessageAt      DateTime?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+
+  customer         User               @relation("ConversationCustomer", fields: [customerId], references: [id])
+  assignedEmployee User?              @relation("ConversationEmployee", fields: [assignedEmployeeId], references: [id])
+  property         Property?          @relation(fields: [propertyId], references: [id])
+  lead             Lead?              @relation(fields: [leadId], references: [id])
+  messages         Message[]
+  reads            ConversationRead[]
+
+  @@index([customerId, lastMessageAt])
+  @@index([assignedEmployeeId, lastMessageAt])
+}
+
+model Message {
+  id              String     @id @default(cuid())
+  conversationId  String
+  senderId        String
+  senderRole      SenderRole
+  body            String
+  clientMessageId String
+  hiddenAt        DateTime?
+  hiddenById      String?
+  hiddenReason    String?
+  createdAt       DateTime   @default(now())
+
+  conversation Conversation @relation(fields: [conversationId], references: [id])
+  sender       User         @relation(fields: [senderId], references: [id])
+  attachments  Media[]
+
+  @@unique([senderId, clientMessageId])
+  @@index([conversationId, createdAt])
+}
+
+model ConversationRead {
+  conversationId String
+  userId         String
+  lastReadAt     DateTime
+
+  conversation Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+
+  @@id([conversationId, userId])
+}
+
+model Report {
+  id           String       @id @default(cuid())
+  reporterId   String
+  targetType   ReportTarget
+  targetId     String
+  reason       String
+  details      String?
+  status       ReportStatus @default(OPEN)
+  resolvedById String?
+  resolution   String?
+  createdAt    DateTime     @default(now())
+  resolvedAt   DateTime?
+
+  reporter User @relation("ReportReporter", fields: [reporterId], references: [id])
+
+  @@index([status, createdAt])
+  @@index([targetType, targetId])
+}
+
+// ---------------------------------------------------------------------------
+// Pricing settings & legal documents (append-only versions)
+// ---------------------------------------------------------------------------
+
+model PricingSettings {
+  id                    String            @id @default(cuid())
+  version               Int               @unique
+  saleBuyerBps          Int
+  saleSellerBps         Int
+  rentalMonthlyFeeCents BigInt
+  rentalPricingMode     RentalPricingMode
+  termsVersion          String
+  changeReason          String
+  createdById           String?
+  createdAt             DateTime          @default(now())
+}
+
+model LegalDocument {
+  id                 String    @id @default(cuid())
+  kind               LegalKind
+  version            String
+  bodyAr             String
+  bodyEn             String
+  legalReviewPending Boolean   @default(true)
+  publishedAt        DateTime  @default(now())
+
+  @@unique([kind, version])
+}
+
+model AppSetting {
+  key         String   @id
+  value       Json
+  updatedById String?
+  updatedAt   DateTime @updatedAt
+}
+
+// ---------------------------------------------------------------------------
+// Sales
+// ---------------------------------------------------------------------------
+
+model SaleClosing {
+  id                      String            @id @default(cuid())
+  refNo                   Int               @unique @default(autoincrement())
+  propertyId              String
+  leadId                  String?
+  sellerId                String
+  buyerId                 String
+  assignedEmployeeId      String?
+  status                  SaleClosingStatus @default(PENDING_APPROVAL)
+  /// propertyId while APPROVED: a property can only be sold once.
+  approvedKey             String?           @unique
+  finalPriceCents         BigInt
+  closingDate             DateTime          @db.Date
+  sellerBps               Int
+  buyerBps                Int
+  sellerCommissionCents   BigInt
+  buyerCommissionCents    BigInt
+  termsSnapshot           Json
+  settingsVersion         Int
+  termsVersion            String
+  overrideReason          String?
+  buyerAcceptedAt         DateTime
+  buyerAcceptanceChannel  AcceptanceChannel
+  sellerAcceptedAt        DateTime
+  sellerAcceptanceChannel AcceptanceChannel
+  requestedById           String
+  approvedById            String?
+  approvedAt              DateTime?
+  cancelledReason         String?
+  notes                   String?
+  createdAt               DateTime          @default(now())
+  updatedAt               DateTime          @updatedAt
+
+  property    Property         @relation(fields: [propertyId], references: [id])
+  seller      User             @relation("ClosingSeller", fields: [sellerId], references: [id])
+  buyer       User             @relation("ClosingBuyer", fields: [buyerId], references: [id])
+  obligations SaleObligation[]
+
+  @@index([status])
+  @@index([propertyId])
+}
+
+model SaleObligation {
+  id             String    @id @default(cuid())
+  closingId      String
+  party          SaleParty
+  amountDueCents BigInt
+  waivedAt       DateTime?
+  waivedById     String?
+  waiveReason    String?
+  createdAt      DateTime  @default(now())
+
+  closing SaleClosing       @relation(fields: [closingId], references: [id])
+  entries SaleLedgerEntry[]
+
+  @@unique([closingId, party])
+}
+
+model SaleLedgerEntry {
+  id              String        @id @default(cuid())
+  receiptNo       Int           @unique @default(autoincrement())
+  obligationId    String
+  kind            LedgerKind
+  /// Signed: positive for PAYMENT, negative for REFUND/REVERSAL.
+  amountCents     BigInt
+  method          PaymentMethod
+  receivedOn      DateTime      @db.Date
+  reference       String?
+  reason          String?
+  reversesEntryId String?       @unique
+  recordedById    String
+  idempotencyKey  String        @unique
+  createdAt       DateTime      @default(now())
+
+  obligation SaleObligation @relation(fields: [obligationId], references: [id])
+
+  @@index([obligationId])
+}
+
+// ---------------------------------------------------------------------------
+// Rentals
+// ---------------------------------------------------------------------------
+
+model RentalAgreement {
+  id                        String             @id @default(cuid())
+  refNo                     Int                @unique @default(autoincrement())
+  propertyId                String
+  landlordId                String
+  tenantId                  String
+  assignedEmployeeId        String
+  leadId                    String?
+  status                    AgreementStatus    @default(DRAFT)
+  /// propertyId while ACTIVE: one active lease per property.
+  activeKey                 String?            @unique
+  startDate                 DateTime           @db.Date
+  endDate                   DateTime           @db.Date
+  dueDay                    Int
+  proration                 ProrationPolicy    @default(NONE)
+  pricingMode               RentalPricingMode
+  enteredAmountCents        BigInt
+  landlordNetCents          BigInt
+  platformFeeCents          BigInt
+  tenantTotalCents          BigInt
+  depositCents              BigInt             @default(0)
+  settingsVersion           Int
+  termsVersion              String
+  termsSnapshot             Json
+  feeOverrideApprovedById   String?
+  feeOverrideReason         String?
+  landlordAcceptedAt        DateTime?
+  landlordAcceptanceChannel AcceptanceChannel?
+  tenantAcceptedAt          DateTime?
+  tenantAcceptanceChannel   AcceptanceChannel?
+  signedDocumentMediaId     String?
+  terminationDate           DateTime?          @db.Date
+  terminationReason         String?
+  renewedFromId             String?            @unique
+  activatedAt               DateTime?
+  activatedById             String?
+  createdById               String
+  notes                     String?
+  createdAt                 DateTime           @default(now())
+  updatedAt                 DateTime           @updatedAt
+
+  property         Property             @relation(fields: [propertyId], references: [id])
+  landlord         User                 @relation("AgreementLandlord", fields: [landlordId], references: [id])
+  tenant           User                 @relation("AgreementTenant", fields: [tenantId], references: [id])
+  assignedEmployee User                 @relation("AgreementEmployee", fields: [assignedEmployeeId], references: [id])
+  renewedFrom      RentalAgreement?     @relation("Renewal", fields: [renewedFromId], references: [id])
+  renewal          RentalAgreement?     @relation("Renewal")
+  amendments       AgreementAmendment[]
+  obligations      RentObligation[]
+  deposits         DepositEntry[]
+
+  @@index([status])
+  @@index([landlordId])
+  @@index([tenantId])
+  @@index([assignedEmployeeId])
+}
+
+model AgreementAmendment {
+  id                 String   @id @default(cuid())
+  agreementId        String
+  effectiveFrom      DateTime @db.Date
+  landlordNetCents   BigInt
+  platformFeeCents   BigInt
+  tenantTotalCents   BigInt
+  reason             String
+  landlordAcceptedAt DateTime
+  tenantAcceptedAt   DateTime
+  recordedById       String
+  createdAt          DateTime @default(now())
+
+  agreement RentalAgreement @relation(fields: [agreementId], references: [id])
+
+  @@unique([agreementId, effectiveFrom])
+}
+
+model DepositEntry {
+  id             String           @id @default(cuid())
+  agreementId    String
+  kind           DepositEntryKind
+  amountCents    BigInt
+  method         PaymentMethod
+  occurredOn     DateTime         @db.Date
+  reference      String?
+  notes          String?
+  recordedById   String
+  idempotencyKey String           @unique
+  createdAt      DateTime         @default(now())
+
+  agreement RentalAgreement @relation(fields: [agreementId], references: [id])
+
+  @@index([agreementId])
+}
+
+model RentObligation {
+  id                         String    @id @default(cuid())
+  agreementId                String
+  periodIndex                Int
+  periodStart                DateTime  @db.Date
+  periodEnd                  DateTime  @db.Date
+  dueDate                    DateTime  @db.Date
+  landlordShareCents         BigInt
+  feeShareCents              BigInt
+  totalCents                 BigInt
+  prorated                   Boolean   @default(false)
+  amendmentId                String?
+  originalLandlordShareCents BigInt?
+  originalFeeShareCents      BigInt?
+  adjustedReason             String?
+  voidedAt                   DateTime?
+  voidReason                 String?
+  waivedAt                   DateTime?
+  waivedById                 String?
+  waiveReason                String?
+  createdAt                  DateTime  @default(now())
+
+  agreement   RentalAgreement   @relation(fields: [agreementId], references: [id])
+  entries     RentLedgerEntry[]
+  payoutLines OwnerPayoutLine[]
+  reminders   ReminderSend[]
+
+  @@unique([agreementId, periodIndex])
+  @@index([dueDate])
+}
+
+model RentLedgerEntry {
+  id              String        @id @default(cuid())
+  receiptNo       Int           @unique @default(autoincrement())
+  obligationId    String
+  kind            LedgerKind
+  /// Signed allocation: positive for PAYMENT, negative for REVERSAL/REFUND.
+  landlordCents   BigInt
+  feeCents        BigInt
+  amountCents     BigInt
+  method          PaymentMethod
+  receivedOn      DateTime      @db.Date
+  reference       String?
+  reason          String?
+  reversesEntryId String?       @unique
+  recordedById    String
+  idempotencyKey  String        @unique
+  createdAt       DateTime      @default(now())
+
+  obligation RentObligation @relation(fields: [obligationId], references: [id])
+
+  @@index([obligationId])
+  @@index([receivedOn])
+}
+
+model OwnerPayout {
+  id               String            @id @default(cuid())
+  refNo            Int               @unique @default(autoincrement())
+  ownerId          String
+  kind             PayoutKind        @default(PAYOUT)
+  totalCents       BigInt
+  method           PaymentMethod
+  paidOn           DateTime          @db.Date
+  reference        String
+  notes            String?
+  reversesPayoutId String?           @unique
+  recordedById     String
+  idempotencyKey   String            @unique
+  createdAt        DateTime          @default(now())
+
+  lines OwnerPayoutLine[]
+  owner User              @relation("PayoutOwner", fields: [ownerId], references: [id])
+
+  @@index([ownerId, paidOn])
+}
+
+model OwnerPayoutLine {
+  id           String @id @default(cuid())
+  payoutId     String
+  obligationId String
+  /// Signed: positive for a payout, negative for a payout reversal.
+  amountCents  BigInt
+
+  payout     OwnerPayout    @relation(fields: [payoutId], references: [id])
+  obligation RentObligation @relation(fields: [obligationId], references: [id])
+
+  @@index([obligationId])
+  @@index([payoutId])
+}
+
+model ReminderSend {
+  id           String   @id @default(cuid())
+  obligationId String
+  /// e.g. "before:3" or "after:7"; unique per obligation so reminders never repeat.
+  reminderKey  String
+  sentAt       DateTime @default(now())
+
+  obligation RentObligation @relation(fields: [obligationId], references: [id])
+
+  @@unique([obligationId, reminderKey])
+}
+
+// ---------------------------------------------------------------------------
+// Notifications, jobs, audit
+// ---------------------------------------------------------------------------
+
+model NotificationTemplate {
+  key       String   @id
+  titleAr   String
+  titleEn   String
+  bodyAr    String
+  bodyEn    String
+  active    Boolean  @default(true)
+  updatedAt DateTime @updatedAt
+}
+
+model Notification {
+  id          String     @id @default(cuid())
+  userId      String
+  templateKey String
+  title       String
+  body        String
+  data        Json?
+  /// Prevents duplicate sends (e.g. "rent.reminder:<obligationId>:before:3").
+  dedupeKey   String     @unique
+  pushStatus  PushStatus @default(NOT_REQUESTED)
+  pushError   String?
+  readAt      DateTime?
+  createdAt   DateTime   @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, createdAt])
+  @@index([pushStatus])
+}
+
+model JobRun {
+  key        String    @id
+  startedAt  DateTime  @default(now())
+  finishedAt DateTime?
+  result     Json?
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actorId    String?
+  action     String
+  entityType String
+  entityId   String
+  metadata   Json?
+  ipHash     String?
+  createdAt  DateTime @default(now())
+
+  @@index([entityType, entityId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([action, createdAt])
+}
