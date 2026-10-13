@@ -1,5 +1,10 @@
 import type { ExpoConfig } from 'expo/config';
-import { BRAND } from '../../packages/shared/src/brand';
+// Expo evaluates this file with a plain CommonJS loader, which cannot import the
+// shared TypeScript source; tsx's require hook lets us keep a single brand file.
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+require('tsx/cjs');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const { BRAND } = require('../../packages/shared/src/brand') as typeof import('../../packages/shared/src/brand');
 
 /**
  * App configuration. Branding (name, bundle IDs, colors) comes from the shared

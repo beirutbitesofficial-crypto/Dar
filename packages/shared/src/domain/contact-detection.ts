@@ -14,7 +14,7 @@ export interface ContactFinding {
   confidence: Confidence;
 }
 
-const ZERO_WIDTH = /[​-‏‪-‮⁠-⁤﻿ـ]/g; // incl. tatweel
+const ZERO_WIDTH = /[\u200B-\u200F\u202A-\u202E\u2060-\u2064\uFEFF\u0640]/g; // incl. tatweel
 
 /** Canonical form used before matching: digits → ASCII, zero-width/tatweel removed, lowercase. */
 export function normalizeForDetection(text: string): string {
@@ -70,7 +70,7 @@ export function detectContactInfo(raw: string): ContactFinding[] {
     const around = text.slice(Math.max(0, start - 8), start + m[0].length + 10);
     const moneyContext = /\$|usd|دولار|د\.ل|ل\.ل|ليرة|lbp|م2|m2|sqm|متر/.test(around);
     const prefixed = /^(?:00961|961|0)/.test(digits);
-    if (moneyContext && !prefixed && !/[\s.\-]/.test(m[0].trim())) continue; // e.g. "3500000$"
+    if (moneyContext && !prefixed && !/[\s.-]/.test(m[0].trim())) continue; // e.g. "3500000$"
     if (/^(?:00961|961)\d{7,8}$/.test(digits) || (LB_MOBILE.test(digits) && (prefixed || digits.length === 8))) {
       push({ type: 'PHONE', match: m[0].trim(), confidence: 'high' });
     } else if (LB_MOBILE.test(digits)) {
@@ -79,13 +79,13 @@ export function detectContactInfo(raw: string): ContactFinding[] {
       push({ type: 'PHONE', match: m[0].trim(), confidence: 'high' }); // 0X XXXXXX landline/mobile
     } else if (digits.length >= 8 && digits.length <= 15) {
       push({ type: 'PHONE', match: m[0].trim(), confidence: 'medium' });
-    } else if (digits.length === 7 && /[\s.\-]/.test(m[0])) {
+    } else if (digits.length === 7 && /[\s.-]/.test(m[0])) {
       push({ type: 'PHONE', match: m[0].trim(), confidence: 'low' });
     }
   }
 
   // Spelled-out digits: six or more digit words in a row.
-  const tokens = text.split(/[\s,،.\-]+/).filter(Boolean);
+  const tokens = text.split(/[\s,،.-]+/).filter(Boolean);
   let run: string[] = [];
   const flush = () => {
     if (run.length >= 6) push({ type: 'SPELLED_DIGITS', match: run.join(' '), confidence: 'medium' });

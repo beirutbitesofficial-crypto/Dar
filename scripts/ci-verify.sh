@@ -18,7 +18,12 @@ export PATH="$PWD/node_modules/.bin:$PATH"
 
 step 01-createdb       bash -c 'psql -h localhost -U dar -d dar -c "CREATE DATABASE dar_shadow" && psql -h localhost -U dar -d dar -c "CREATE DATABASE dar_test" && psql -h localhost -U dar -d dar -c "CREATE EXTENSION IF NOT EXISTS btree_gist"'
 step 02-install        pnpm install --no-frozen-lockfile
+cp apps/api/.env.example apps/api/.env && sed -i -e "s/^STORAGE_DRIVER=.*/STORAGE_DRIVER=local/" -e "s#^CORS_ORIGINS=.*#CORS_ORIGINS=http://localhost:3000,http://localhost:8081#" apps/api/.env
+cp apps/admin/.env.example apps/admin/.env.local
+printf "EXPO_PUBLIC_API_URL=http://localhost:4000\n" > apps/mobile/.env
+step 02b-build-shared  pnpm --filter @dar/shared build
 step 03-expo-align     bash -c 'cd apps/mobile && npx expo install --check; echo "--- fix:"; npx expo install --fix'
+git diff -- apps/mobile/package.json > "$OUT/expo-align.diff"
 step 04-prisma-generate pnpm --filter @dar/api exec prisma generate
 step 05-migrate-diff   pnpm --filter @dar/api exec prisma migrate diff --from-migrations prisma/migrations --to-schema-datamodel prisma/schema.prisma --shadow-database-url "$SHADOW_DATABASE_URL" --script
 step 06-typecheck-shared pnpm --filter @dar/shared typecheck
@@ -39,6 +44,8 @@ step 20-build-admin    pnpm --filter @dar/admin build
 step 21-seed-demo      bash -c 'cd apps/api && npx prisma migrate deploy && SEED_DEMO=true npx tsx prisma/seed.ts'
 step 22-expo-export-web bash -c 'cd apps/mobile && npx expo export --platform web --output-dir dist-web'
 step 23-expo-export-native bash -c 'cd apps/mobile && npx expo export --platform android --platform ios --output-dir dist-native'
-step 24-expo-doctor    bash -c 'cd apps/mobile && npx --yes expo-doctor'
-step 25-versions       bash -c 'pnpm list -r --depth 0'
+step 24-playwright     npx playwright install --with-deps chromium
+step 25-smoke          bash scripts/ci-smoke.sh
+step 26-expo-doctor    bash -c 'cd apps/mobile && npx --yes expo-doctor'
+step 27-versions       bash -c 'pnpm list -r --depth 0'
 cat "$OUT/summary.txt"
