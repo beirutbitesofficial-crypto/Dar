@@ -17,7 +17,7 @@ step() {
 export PATH="$PWD/node_modules/.bin:$PATH"
 
 step 01-createdb       bash -c 'psql -h localhost -U dar -d dar -c "CREATE DATABASE dar_shadow" && psql -h localhost -U dar -d dar -c "CREATE DATABASE dar_test" && psql -h localhost -U dar -d dar -c "CREATE EXTENSION IF NOT EXISTS btree_gist"'
-step 02-install        pnpm install --no-frozen-lockfile
+step 02-install        pnpm install --frozen-lockfile
 cp apps/api/.env.example apps/api/.env && sed -i -e "s/^STORAGE_DRIVER=.*/STORAGE_DRIVER=local/" -e "s#^CORS_ORIGINS=.*#CORS_ORIGINS=http://localhost:3000,http://localhost:8081#" apps/api/.env
 cp apps/admin/.env.example apps/admin/.env.local
 printf "EXPO_PUBLIC_API_URL=http://localhost:4000\n" > apps/mobile/.env
