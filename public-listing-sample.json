@@ -1,0 +1,63 @@
+{
+  "id": "cmv72l1fv00294cm239sz7vxo",
+  "ref": "DAR-1002",
+  "listingType": "RENT",
+  "propertyType": "APARTMENT",
+  "title": {
+    "ar": "شقة مفروشة بعبرا",
+    "en": "Furnished apartment in Abra"
+  },
+  "description": {
+    "ar": "شقة غرفتين نوم مفروشة بالكامل، هادية ومنظّمة، مع اشتراك موتير وطاقة شمسية.",
+    "en": "Fully furnished two-bedroom apartment in a quiet building with generator and solar power."
+  },
+  "location": {
+    "areaId": "cmv72l169000j4cm2l4hs6vd1",
+    "areaName": {
+      "ar": "صيدا",
+      "en": "Saida"
+    },
+    "townId": "cmv72l16m000v4cm2pw4bzjpj",
+    "townName": {
+      "ar": "عبرا",
+      "en": "Abra"
+    },
+    "neighborhoodName": null,
+    "approximate": {
+      "lat": 33.55561,
+      "lng": 35.39504
+    }
+  },
+  "pricing": {
+    "kind": "RENT",
+    "tenantMonthlyTotalCents": 60000,
+    "includesMonthlyFeeCents": 5000
+  },
+  "specs": {
+    "sizeSqm": 115,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "floor": 2,
+    "totalFloors": 4,
+    "furnished": true
+  },
+  "amenities": [
+    "generator",
+    "solar_power",
+    "balcony",
+    "air_conditioning"
+  ],
+  "availableFrom": "2026-10-28",
+  "featured": true,
+  "publishedAt": "2026-10-12T19:24:26.635Z",
+  "photos": [
+    {
+      "id": "cmv72l1fy002b4cm2j23evz4c",
+      "url": "http://localhost:4000/v1/dev-storage/eyJvcCI6ImdldCIsImtleSI6Im1lZGlhL2NtdjcybDFmeTAwMmI0Y20yajIzZXZ6NGMuanBnIiwiZXhwIjoxNzkxOTIwNTI3LCJleHRyYSI6IiJ9.GrNpgUBiWyiykYC36SXXgam4HCsNA0WRrAVQxOXsvPk",
+      "width": 1600,
+      "height": 1100,
+      "isCover": true
+    }
+  ],
+  "demo": true
+}

@@ -1,0 +1,45 @@
+applying 20261013000000_init
+applying 20261013000100_financial_guards
+psql:apps/api/prisma/migrations/20261013000100_financial_guards/migration.sql:102: NOTICE:  extension "btree_gist" already exists, skipping
+applying 20261013000200_lockdown_public_api
+applying 20261013000300_harden_functions
+psql:apps/api/prisma/migrations/20261013000300_harden_functions/migration.sql:16: NOTICE:  schema "extensions" already exists, skipping
+ok - a listing cannot be PUBLISHED without an approval record
+ok - agreement: landlord net + fee must equal tenant total (no hidden charges)
+ok - agreement cannot become ACTIVE without both parties' recorded acceptance
+ok - agreement activates once both acceptances are recorded
+ok - active agreement fees cannot be changed silently (settings changes never reach it)
+ok - only one ACTIVE agreement per property
+ok - duplicate monthly obligation for the same period is impossible
+ok - re-running generation (ON CONFLICT DO NOTHING) leaves exactly one row per period
+ok - obligations cannot be deleted
+ok - obligation amounts cannot be changed without a recorded adjustment
+ok - obligation period and due date are immutable
+ok - partial payment recorded
+ok - the same payment cannot be recorded twice (idempotency key)
+ok - payments cannot exceed the obligation's landlord share
+ok - entry amount must equal landlord + fee allocation
+ok - second payment completes the obligation
+ok - ledger entries cannot be edited
+ok - ledger entries cannot be deleted
+ok - a reversal must exactly negate the original payment
+ok - owner payout equal to collected landlord share
+ok - cannot pay an owner more than was collected for them
+ok - tenant has not paid → owner payout is not possible (and never automatic)
+ok - payouts require a reference
+ok - payouts cannot be deleted
+ok - reversal of a bounced payment recorded as a new entry
+ok - a payment can only be reversed once
+ok - balances after reversal: landlord 300.00 collected, fee 0, 3 entries kept
+ok - past pricing settings cannot be rewritten
+ok - commission rates are bounded 0–100%
+ok - audit log cannot be deleted
+ok - approved closing commissions are frozen
+ok - a property cannot have two approved sale closings
+ok - buyer commission payments cannot exceed the buyer obligation
+ok - cannot refund more than was collected
+ok - one open lead per customer and property (no conflicting duplicates)
+ok - lost leads require a reason
+ok - an employee cannot have overlapping confirmed viewings
+ok - a different employee can take the same time slot
+ALL SQL GUARD TESTS PASSED

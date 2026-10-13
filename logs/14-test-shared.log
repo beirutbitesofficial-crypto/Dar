@@ -1,0 +1,332 @@
+
+> @dar/shared@0.1.0 test /home/runner/work/Dar/Dar/packages/shared
+> tsx --test test/*.test.ts
+
+TAP version 13
+# Subtest: owner contact + exact location: admin, assigned employee and the owner only
+ok 1 - owner contact + exact location: admin, assigned employee and the owner only
+  ---
+  duration_ms: 1.034472
+  type: 'test'
+  ...
+# Subtest: leads: admin and the assigned employee only — never the customer or owner
+ok 2 - leads: admin and the assigned employee only — never the customer or owner
+  ---
+  duration_ms: 0.172242
+  type: 'test'
+  ...
+# Subtest: conversations: the customer, assigned employee or admin; never the owner
+ok 3 - conversations: the customer, assigned employee or admin; never the owner
+  ---
+  duration_ms: 0.333032
+  type: 'test'
+  ...
+# Subtest: internal notes are staff-only (customers never see them)
+ok 4 - internal notes are staff-only (customers never see them)
+  ---
+  duration_ms: 0.227665
+  type: 'test'
+  ...
+# Subtest: money: collections need explicit employee permission + assignment; payouts and settings are admin-only
+ok 5 - money: collections need explicit employee permission + assignment; payouts and settings are admin-only
+  ---
+  duration_ms: 0.370483
+  type: 'test'
+  ...
+# Subtest: agreements: parties see their own side; staff by assignment
+ok 6 - agreements: parties see their own side; staff by assignment
+  ---
+  duration_ms: 0.226413
+  type: 'test'
+  ...
+# Subtest: sale: $100,000 at 2.5% + 2.5% matches the specification exactly
+ok 7 - sale: $100,000 at 2.5% + 2.5% matches the specification exactly
+  ---
+  duration_ms: 1.502978
+  type: 'test'
+  ...
+# Subtest: sale: owner sees seller figures only, customer sees buyer figures only
+ok 8 - sale: owner sees seller figures only, customer sees buyer figures only
+  ---
+  duration_ms: 0.844948
+  type: 'test'
+  ...
+# Subtest: sale: commissions are computed on the final agreed price, not the asking price
+ok 9 - sale: commissions are computed on the final agreed price, not the asking price
+  ---
+  duration_ms: 0.227966
+  type: 'test'
+  ...
+# Subtest: sale: asymmetric configurable rates
+ok 10 - sale: asymmetric configurable rates
+  ---
+  duration_ms: 0.143648
+  type: 'test'
+  ...
+# Subtest: money: exact half-up rounding to the cent with integer arithmetic
+ok 11 - money: exact half-up rounding to the cent with integer arithmetic
+  ---
+  duration_ms: 0.163726
+  type: 'test'
+  ...
+# Subtest: money: rejects non-integer, negative and out-of-range values
+ok 12 - money: rejects non-integer, negative and out-of-range values
+  ---
+  duration_ms: 0.528418
+  type: 'test'
+  ...
+# Subtest: money: parses Latin and Arabic-Indic input
+ok 13 - money: parses Latin and Arabic-Indic input
+  ---
+  duration_ms: 0.710077
+  type: 'test'
+  ...
+# Subtest: sale obligations: Pending → Partially paid → Paid, Waived, Refunded
+ok 14 - sale obligations: Pending → Partially paid → Paid, Waived, Refunded
+  ---
+  duration_ms: 0.261629
+  type: 'test'
+  ...
+# Subtest: normalizes Arabic-Indic and Persian digits
+ok 15 - normalizes Arabic-Indic and Persian digits
+  ---
+  duration_ms: 1.607504
+  type: 'test'
+  ...
+# Subtest: detects Lebanese phone numbers in Arabic and Latin digits with separators
+ok 16 - detects Lebanese phone numbers in Arabic and Latin digits with separators
+  ---
+  duration_ms: 6.689794
+  type: 'test'
+  ...
+# Subtest: detects email, links, WhatsApp, social media and handles
+ok 17 - detects email, links, WhatsApp, social media and handles
+  ---
+  duration_ms: 2.630124
+  type: 'test'
+  ...
+# Subtest: detects digits spelled out in Lebanese Arabic
+ok 18 - detects digits spelled out in Lebanese Arabic
+  ---
+  duration_ms: 0.465921
+  type: 'test'
+  ...
+# Subtest: ignores ordinary listing text: prices, sizes, floors
+ok 19 - ignores ordinary listing text: prices, sizes, floors
+  ---
+  duration_ms: 0.55089
+  type: 'test'
+  ...
+# Subtest: Lebanese phone normalization
+ok 20 - Lebanese phone normalization
+  ---
+  duration_ms: 0.542864
+  type: 'test'
+  ...
+# Subtest: property fields: land never requires or keeps bedrooms
+ok 21 - property fields: land never requires or keeps bedrooms
+  ---
+  duration_ms: 1.164956
+  type: 'test'
+  ...
+# Subtest: editing a published listing: sensitive changes are split out for re-review
+ok 22 - editing a published listing: sensitive changes are split out for re-review
+  ---
+  duration_ms: 0.469026
+  type: 'test'
+  ...
+# Subtest: employees cannot be double-booked (15-minute buffer)
+ok 23 - employees cannot be double-booked (15-minute buffer)
+  ---
+  duration_ms: 1.133227
+  type: 'test'
+  ...
+# Subtest: partial payments fill the landlord share first, then the platform fee
+ok 24 - partial payments fill the landlord share first, then the platform fee
+  ---
+  duration_ms: 2.114521
+  type: 'test'
+  ...
+# Subtest: overpayment, zero payments and void obligations are rejected
+ok 25 - overpayment, zero payments and void obligations are rejected
+  ---
+  duration_ms: 0.21381
+  type: 'test'
+  ...
+# Subtest: reversal negates exactly one payment and cannot be applied twice
+ok 26 - reversal negates exactly one payment and cannot be applied twice
+  ---
+  duration_ms: 0.421127
+  type: 'test'
+  ...
+# Subtest: refunds reduce the platform fee first, then the landlord share
+ok 27 - refunds reduce the platform fee first, then the landlord share
+  ---
+  duration_ms: 0.326991
+  type: 'test'
+  ...
+# Subtest: a tenant payment does NOT mark the owner as paid; only a recorded payout does
+ok 28 - a tenant payment does NOT mark the owner as paid; only a recorded payout does
+  ---
+  duration_ms: 0.63726
+  type: 'test'
+  ...
+# Subtest: owner payout balance with partial collection, payout, then a reversed tenant payment
+ok 29 - owner payout balance with partial collection, payout, then a reversed tenant payment
+  ---
+  duration_ms: 1.667425
+  type: 'test'
+  ...
+# Subtest: dashboard: collected rent is not counted as platform revenue
+ok 30 - dashboard: collected rent is not counted as platform revenue
+  ---
+  duration_ms: 0.217746
+  type: 'test'
+  ...
+# Subtest: public listing payload contains no private fields or values
+ok 31 - public listing payload contains no private fields or values
+  ---
+  duration_ms: 1.748687
+  type: 'test'
+  ...
+# Subtest: rental listing shows the tenant monthly total including the fee
+ok 32 - rental listing shows the tenant monthly total including the fee
+  ---
+  duration_ms: 0.906264
+  type: 'test'
+  ...
+# Subtest: defence in depth: forbidden keys anywhere in a payload are rejected
+ok 33 - defence in depth: forbidden keys anywhere in a payload are rejected
+  ---
+  duration_ms: 0.64742
+  type: 'test'
+  ...
+# Subtest: listings are invisible to the public until approved and published
+ok 34 - listings are invisible to the public until approved and published
+  ---
+  duration_ms: 0.366264
+  type: 'test'
+  ...
+# Subtest: listing transitions: only admins publish; rejection needs a reason; owners resubmit
+ok 35 - listing transitions: only admins publish; rejection needs a reason; owners resubmit
+  ---
+  duration_ms: 0.432569
+  type: 'test'
+  ...
+# Subtest: lead, viewing and agreement transitions
+ok 36 - lead, viewing and agreement transitions
+  ---
+  duration_ms: 0.365232
+  type: 'test'
+  ...
+# Subtest: rental NET_PLUS_FEE: $500 net + $50 fee = $550 tenant total, $500 owner payout
+ok 37 - rental NET_PLUS_FEE: $500 net + $50 fee = $550 tenant total, $500 owner payout
+  ---
+  duration_ms: 2.242851
+  type: 'test'
+  ...
+# Subtest: rental TOTAL_MINUS_FEE: owner sees resulting net before acceptance
+ok 38 - rental TOTAL_MINUS_FEE: owner sees resulting net before acceptance
+  ---
+  duration_ms: 0.325969
+  type: 'test'
+  ...
+# Subtest: rental TOTAL_MINUS_FEE: fee must be lower than the total
+ok 39 - rental TOTAL_MINUS_FEE: fee must be lower than the total
+  ---
+  duration_ms: 0.705418
+  type: 'test'
+  ...
+# Subtest: rental: the $50 is never silently deducted from the owner in the default mode
+ok 40 - rental: the $50 is never silently deducted from the owner in the default mode
+  ---
+  duration_ms: 0.339455
+  type: 'test'
+  ...
+# Subtest: existing agreements retain their accepted fees after global settings change
+ok 41 - existing agreements retain their accepted fees after global settings change
+  ---
+  duration_ms: 2.636516
+  type: 'test'
+  ...
+# Subtest: sale snapshot freezes rules; override requires an admin reason
+ok 42 - sale snapshot freezes rules; override requires an admin reason
+  ---
+  duration_ms: 0.647219
+  type: 'test'
+  ...
+# Subtest: acceptance must record terms version and the exact disclosed amounts
+ok 43 - acceptance must record terms version and the exact disclosed amounts
+  ---
+  duration_ms: 0.516946
+  type: 'test'
+  ...
+# Subtest: month-end anchoring: a lease starting Jan 31 bills Feb 28, Mar 31, Apr 30
+ok 44 - month-end anchoring: a lease starting Jan 31 bills Feb 28, Mar 31, Apr 30
+  ---
+  duration_ms: 3.062832
+  type: 'test'
+  ...
+# Subtest: leap year clamping
+ok 45 - leap year clamping
+  ---
+  duration_ms: 0.181018
+  type: 'test'
+  ...
+# Subtest: due day falls on the next occurrence within the period
+ok 46 - due day falls on the next occurrence within the period
+  ---
+  duration_ms: 0.145762
+  type: 'test'
+  ...
+# Subtest: explicit DAILY proration of a short final period, landlord and fee prorated separately
+ok 47 - explicit DAILY proration of a short final period, landlord and fee prorated separately
+  ---
+  duration_ms: 0.506336
+  type: 'test'
+  ...
+# Subtest: monthly generation is idempotent: re-running never produces duplicates
+ok 48 - monthly generation is idempotent: re-running never produces duplicates
+  ---
+  duration_ms: 0.747877
+  type: 'test'
+  ...
+# Subtest: amendments apply from the first period starting on/after their effective date
+ok 49 - amendments apply from the first period starting on/after their effective date
+  ---
+  duration_ms: 0.320128
+  type: 'test'
+  ...
+# Subtest: early termination voids future periods and adjusts the current one (DAILY)
+ok 50 - early termination voids future periods and adjusts the current one (DAILY)
+  ---
+  duration_ms: 0.354363
+  type: 'test'
+  ...
+# Subtest: renewal starts the day after the previous end date
+ok 51 - renewal starts the day after the previous end date
+  ---
+  duration_ms: 0.179075
+  type: 'test'
+  ...
+# Subtest: invalid schedules are rejected
+ok 52 - invalid schedules are rejected
+  ---
+  duration_ms: 0.544307
+  type: 'test'
+  ...
+# Subtest: Beirut calendar date crosses midnight correctly (UTC+3 in summer, UTC+2 in winter)
+ok 53 - Beirut calendar date crosses midnight correctly (UTC+3 in summer, UTC+2 in winter)
+  ---
+  duration_ms: 15.167699
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1189.486129

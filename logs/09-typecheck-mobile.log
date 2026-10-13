@@ -1,0 +1,4 @@
+
+> @dar/mobile@0.1.0 typecheck /home/runner/work/Dar/Dar/apps/mobile
+> tsc --noEmit
+

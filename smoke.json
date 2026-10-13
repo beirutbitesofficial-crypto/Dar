@@ -1,0 +1,272 @@
+[
+  {
+    "name": "admin-00-login",
+    "url": "http://localhost:3000/login",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-01-overview",
+    "url": "http://localhost:3000/",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-02-moderation",
+    "url": "http://localhost:3000/moderation",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-03-properties",
+    "url": "http://localhost:3000/properties",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-04-leads",
+    "url": "http://localhost:3000/leads",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-05-viewings",
+    "url": "http://localhost:3000/viewings",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-06-conversations",
+    "url": "http://localhost:3000/conversations",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-07-sales",
+    "url": "http://localhost:3000/sales",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-08-agreements",
+    "url": "http://localhost:3000/agreements",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-09-collections",
+    "url": "http://localhost:3000/collections",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-10-payouts",
+    "url": "http://localhost:3000/payouts",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-11-reports",
+    "url": "http://localhost:3000/reports",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-12-users",
+    "url": "http://localhost:3000/users",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-13-locations",
+    "url": "http://localhost:3000/locations",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-14-settings",
+    "url": "http://localhost:3000/settings",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-15-audit",
+    "url": "http://localhost:3000/audit",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-16-exports",
+    "url": "http://localhost:3000/exports",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-detail-properties",
+    "url": "http://localhost:3000/properties/cmv72l2c2004p4cm2o38s3bd3",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-detail-agreements",
+    "url": "http://localhost:3000/agreements/cmv72l2i5005i4cm272v5dyes",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-detail-leads",
+    "url": "http://localhost:3000/leads/cmv72l2i1005e4cm2leiquenz",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "admin-detail-sales",
+    "url": "http://localhost:3000/sales/cmv72l2iu00664cm26771lgxj",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "employee-01-overview",
+    "url": "http://localhost:3000/",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "employee-02-properties",
+    "url": "http://localhost:3000/properties",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "employee-03-settings-forbidden",
+    "url": "http://localhost:3000/settings",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-01-home-ar",
+    "url": "http://localhost:8081/",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-02-search-ar",
+    "url": "http://localhost:8081/search",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-03-listing-ar",
+    "url": "http://localhost:8081/listing/cmv72l1fv00294cm239sz7vxo",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-03b-sale-listing-ar",
+    "url": "http://localhost:8081/listing/cmv72l1b800214cm21omuc6ns",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-04-account-ar",
+    "url": "http://localhost:8081/account",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-05-login-ar",
+    "url": "http://localhost:8081/auth/login",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-06-list-property-ar",
+    "url": "http://localhost:8081/owner",
+    "status": "ok",
+    "errors": [
+      "401 http://localhost:4000/v1/owner/properties",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ]
+  },
+  {
+    "name": "mobile-07-requests-ar",
+    "url": "http://localhost:8081/requests",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-08-favorites-ar",
+    "url": "http://localhost:8081/favorites",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-09-viewing-request-ar",
+    "url": "http://localhost:8081/viewing/cmv72l1fv00294cm239sz7vxo",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-10-account-signed-in-ar",
+    "url": "http://localhost:8081/account",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-20-owner-listings-ar",
+    "url": "http://localhost:8081/owner",
+    "status": "ok",
+    "errors": [
+      "401 http://localhost:4000/v1/owner/properties",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ]
+  },
+  {
+    "name": "mobile-21-owner-new-listing-ar",
+    "url": "http://localhost:8081/owner/edit/new",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-23-owner-rentals-ar",
+    "url": "http://localhost:8081/rentals",
+    "status": "ok",
+    "errors": [
+      "401 http://localhost:4000/v1/me/agreements",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ]
+  },
+  {
+    "name": "mobile-24-owner-statement-ar",
+    "url": "http://localhost:8081/statement",
+    "status": "ok",
+    "errors": [
+      "401 http://localhost:4000/v1/me/owner-statement",
+      "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+    ]
+  },
+  {
+    "name": "mobile-11-home-en",
+    "url": "http://localhost:8081/",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-12b-sale-listing-en",
+    "url": "http://localhost:8081/listing/cmv72l1b800214cm21omuc6ns",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-12-listing-en",
+    "url": "http://localhost:8081/listing/cmv72l1fv00294cm239sz7vxo",
+    "status": "ok",
+    "errors": []
+  },
+  {
+    "name": "mobile-13-requests-en",
+    "url": "http://localhost:8081/requests",
+    "status": "ok",
+    "errors": []
+  }
+]

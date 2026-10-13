@@ -1,0 +1,10 @@
+
+> @dar/api@0.1.0 lint /home/runner/work/Dar/Dar/apps/api
+> eslint "src/**/*.ts" "test/**/*.ts"
+
+
+/home/runner/work/Dar/Dar/apps/api/src/modules/notifications/notifications.service.ts
+  91:14  warning  'e' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 1 problem (0 errors, 1 warning)
+

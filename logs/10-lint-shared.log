@@ -1,0 +1,4 @@
+
+> @dar/shared@0.1.0 lint /home/runner/work/Dar/Dar/packages/shared
+> eslint src test
+

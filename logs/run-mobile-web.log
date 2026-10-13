@@ -1,0 +1,427 @@
+ INFO  Accepting connections at http://localhost:8081
+ HTTP  10/13/2026 7:27:00 PM ::1 GET /
+ HTTP  10/13/2026 7:27:00 PM ::1 Returned 200 in 14 ms
+ HTTP  10/13/2026 7:27:00 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:00 PM ::1 Returned 200 in 6 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 200 in 4 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 200 in 4 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 200 in 4 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:01 PM ::1 Returned 200 in 7 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /search
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:04 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:04 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /listing/cmv72l1fv00294cm239sz7vxo
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 200 in 6 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:27:07 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /listing/cmv72l1b800214cm21omuc6ns
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:10 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 4 ms
+ HTTP  10/13/2026 7:27:10 PM ::1 Returned 304 in 4 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /account
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 200 in 0 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:27:13 PM ::1 Returned 304 in 4 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 GET /auth/login
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:15 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:15 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 200 in 4 ms
+ HTTP  10/13/2026 7:27:15 PM ::1 Returned 200 in 3 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /owner
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:17 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 GET /auth/login
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:19 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:19 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:19 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /requests
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:24 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 200 in 3 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 200 in 3 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:24 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:24 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /favorites
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:27 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 4 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 200 in 3 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:27:27 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /viewing/cmv72l1fv00294cm239sz7vxo
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:29 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:29 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /account
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:32 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:32 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:32 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:34 PM ::1 GET /auth/login
+ HTTP  10/13/2026 7:27:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:34 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:35 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:35 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:35 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:35 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:35 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:35 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:35 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:35 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:35 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:35 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /owner
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:39 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 4 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:39 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:39 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 GET /owner/edit/new
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:27:42 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:42 PM ::1 HEAD /
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:27:42 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 GET /rentals
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:17 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:17 PM ::1 Returned 200 in 0 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 GET /statement
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:20 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:20 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 GET /auth/login
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:23 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:23 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 200 in 2 ms
+ HTTP  10/13/2026 7:28:23 PM ::1 Returned 200 in 3 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:28 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:28 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /listing/cmv72l1b800214cm21omuc6ns
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 200 in 0 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:31 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /listing/cmv72l1fv00294cm239sz7vxo
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 3 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:34 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:34 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:34 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /requests
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /_expo/static/js/web/entry-93fb41851673aadb2f635cfe01c59fb5.js
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo/vector-icons/build/vendor/react-native-vector-icons/Fonts/Ionicons.b4eb097d35f44ed943676fd56f6bdc51.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:37 PM ::1 HEAD /
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 2 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 200 in 1 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/600SemiBold/IBMPlexSansArabic_600SemiBold.719a0ad23789571b3e5f40f95e50c791.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/500Medium/IBMPlexSansArabic_500Medium.daa38886b4ccd0f6e51cf6d2f5c6fb92.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 0 ms
+ HTTP  10/13/2026 7:28:37 PM ::1 GET /assets/__node_modules/@expo-google-fonts/ibm-plex-sans-arabic/400Regular/IBMPlexSansArabic_400Regular.ba73b8c18f3ecabea995bfe7535607e1.ttf
+ HTTP  10/13/2026 7:28:37 PM ::1 Returned 304 in 0 ms

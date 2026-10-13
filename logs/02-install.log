@@ -1,0 +1,50 @@
+Scope: all 5 workspace projects
+Lockfile is up to date, resolution step is skipped
+Packages: +1460
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 0, reused 0, downloaded 1, added 0
+Progress: resolved 0, reused 0, downloaded 93, added 66
+Progress: resolved 0, reused 0, downloaded 133, added 82
+Progress: resolved 0, reused 0, downloaded 200, added 110
+Progress: resolved 0, reused 0, downloaded 279, added 152
+Progress: resolved 0, reused 0, downloaded 441, added 301
+Progress: resolved 0, reused 0, downloaded 679, added 657
+Progress: resolved 0, reused 0, downloaded 952, added 1047
+Progress: resolved 0, reused 0, downloaded 1247, added 1362
+Progress: resolved 0, reused 0, downloaded 1322, added 1459
+Progress: resolved 0, reused 0, downloaded 1323, added 1460, done
+node_modules/@prisma/engines postinstall$ node scripts/postinstall.js
+node_modules/esbuild postinstall$ node install.js
+node_modules/argon2 install$ cross-env ZERO_AR_DATE=1 node-gyp-build
+node_modules/sharp install$ node install/check.js || npm run build
+node_modules/esbuild postinstall: Done
+node_modules/sharp install: Done
+node_modules/argon2 install: Done
+node_modules/@prisma/engines postinstall: Done
+node_modules/prisma preinstall$ node scripts/preinstall-entry.js
+node_modules/prisma preinstall: Done
+node_modules/@prisma/client postinstall$ node scripts/postinstall.js
+node_modules/@prisma/client postinstall: prisma:warn We could not find your Prisma schema in the default locations (see: https://pris.ly/d/prisma-schema-location).
+node_modules/@prisma/client postinstall: If you have a Prisma schema file in a custom path, you will need to run
+node_modules/@prisma/client postinstall: `prisma generate --schema=./path/to/your/schema.prisma` to generate Prisma Client.
+node_modules/@prisma/client postinstall: If you do not have a Prisma schema file yet, you can ignore this message.
+node_modules/@prisma/client postinstall: Done
+
+packages/shared prepare$ tsc -p tsconfig.build.json
+packages/shared prepare: Done
+apps/api postinstall$ prisma generate
+apps/api postinstall: warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+apps/api postinstall: For more information, see: https://pris.ly/prisma-config
+apps/api postinstall: Prisma schema loaded from prisma/schema.prisma
+apps/api postinstall: ✔ Generated Prisma Client (v6.19.3) to ./../../node_modules/@prisma/client in 312ms
+apps/api postinstall: Start by importing your Prisma Client (See: https://pris.ly/d/importing-client)
+apps/api postinstall: Tip: Need your database queries to be 1000x faster? Accelerate offers you that and more: https://pris.ly/tip-2-accelerate
+apps/api postinstall: Done
+╭ Warning ─────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│   Ignored build scripts: @parcel/watcher@2.6.0, unrs-resolver@1.12.2.        │
+│   Run "pnpm approve-builds" to pick which dependencies should be allowed     │
+│   to run scripts.                                                            │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+Done in 17.8s using pnpm v10.28.0

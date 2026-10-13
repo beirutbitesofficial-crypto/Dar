@@ -1,0 +1,56 @@
+{"ok":true,"integrations":{"push":"unconfigured","email":"development_console","phoneOtp":"unconfigured","ocr":"unconfigured","payments":"manual_recording_only","storage":"local"}}
+admin-00-login ok 
+admin-01-overview ok 
+admin-02-moderation ok 
+admin-03-properties ok 
+admin-04-leads ok 
+admin-05-viewings ok 
+admin-06-conversations ok 
+admin-07-sales ok 
+admin-08-agreements ok 
+admin-09-collections ok 
+admin-10-payouts ok 
+admin-11-reports ok 
+admin-12-users ok 
+admin-13-locations ok 
+admin-14-settings ok 
+admin-15-audit ok 
+admin-16-exports ok 
+admin-detail-properties ok 
+admin-detail-agreements ok 
+admin-detail-leads ok 
+admin-detail-sales ok 
+employee-01-overview ok 
+employee-02-properties ok 
+employee-03-settings-forbidden ok 
+mobile-01-home-ar ok 
+mobile-02-search-ar ok 
+mobile-03-listing-ar ok 
+mobile-03b-sale-listing-ar ok 
+mobile-04-account-ar ok 
+mobile-05-login-ar ok 
+mobile-06-list-property-ar ok [
+  '401 http://localhost:4000/v1/owner/properties',
+  'Failed to load resource: the server responded with a status of 401 (Unauthorized)'
+]
+mobile-07-requests-ar ok 
+mobile-08-favorites-ar ok 
+mobile-09-viewing-request-ar ok 
+mobile-10-account-signed-in-ar ok 
+mobile-20-owner-listings-ar ok [
+  '401 http://localhost:4000/v1/owner/properties',
+  'Failed to load resource: the server responded with a status of 401 (Unauthorized)'
+]
+mobile-21-owner-new-listing-ar ok 
+mobile-23-owner-rentals-ar ok [
+  '401 http://localhost:4000/v1/me/agreements',
+  'Failed to load resource: the server responded with a status of 401 (Unauthorized)'
+]
+mobile-24-owner-statement-ar ok [
+  '401 http://localhost:4000/v1/me/owner-statement',
+  'Failed to load resource: the server responded with a status of 401 (Unauthorized)'
+]
+mobile-11-home-en ok 
+mobile-12b-sale-listing-en ok 
+mobile-12-listing-en ok 
+mobile-13-requests-en ok 

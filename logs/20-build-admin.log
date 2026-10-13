@@ -1,0 +1,75 @@
+
+> @dar/admin@0.1.0 build /home/runner/work/Dar/Dar/apps/admin
+> next build
+
+⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+Attention: Next.js now collects completely anonymous telemetry regarding usage.
+This information is used to shape Next.js' roadmap and prioritize features.
+You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+https://nextjs.org/telemetry
+
+   ▲ Next.js 15.5.27
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+<w> [webpack.cache.PackFileCacheStrategy] Skipped not serializable cache item 'Compilation/modules|/home/runner/work/Dar/Dar/node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!/home/runner/work/Dar/Dar/node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!/home/runner/work/Dar/Dar/apps/admin/app/globals.css': No serializer registered for Warning
+<w> while serializing webpack/lib/cache/PackFileCacheStrategy.PackContentItems -> webpack/lib/NormalModule -> Array { 1 items } -> webpack/lib/ModuleWarning -> Warning
+ ⚠ Compiled with warnings in 8.3s
+
+./app/globals.css.webpack[javascript/auto]!=!../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css
+Warning
+
+(76:51) autoprefixer: end value has mixed support, consider using flex-end instead
+
+Import trace for requested module:
+./app/globals.css.webpack[javascript/auto]!=!../../node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[2]!../../node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[10].use[3]!./app/globals.css
+./app/globals.css
+
+   Linting and checking validity of types ...
+
+ ⚠ The Next.js plugin was not detected in your ESLint configuration. See https://nextjs.org/docs/app/api-reference/config/eslint#migrating-existing-config
+   Collecting page data ...
+   Generating static pages (0/21) ...
+   Generating static pages (5/21) 
+   Generating static pages (10/21) 
+   Generating static pages (15/21) 
+ ✓ Generating static pages (21/21)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                 Size  First Load JS
+┌ ƒ /                                      145 B         103 kB
+├ ƒ /_not-found                            145 B         103 kB
+├ ƒ /agreements                            192 B         106 kB
+├ ƒ /agreements/[id]                       450 B         106 kB
+├ ƒ /audit                                 145 B         103 kB
+├ ƒ /collections                           192 B         106 kB
+├ ƒ /conversations                         192 B         106 kB
+├ ƒ /conversations/[id]                    145 B         103 kB
+├ ƒ /download                              145 B         103 kB
+├ ƒ /exports                               145 B         103 kB
+├ ƒ /leads                                 192 B         106 kB
+├ ƒ /leads/[id]                            192 B         106 kB
+├ ƒ /locations                             145 B         103 kB
+├ ƒ /login                               26.9 kB         130 kB
+├ ƒ /moderation                            192 B         106 kB
+├ ƒ /p/[ref]                               145 B         103 kB
+├ ƒ /payouts                               451 B         106 kB
+├ ƒ /properties                            192 B         106 kB
+├ ƒ /properties/[id]                       192 B         106 kB
+├ ƒ /reports                               192 B         106 kB
+├ ƒ /sales                                 192 B         106 kB
+├ ƒ /sales/[id]                            450 B         106 kB
+├ ƒ /settings                              450 B         106 kB
+├ ƒ /users                                 450 B         106 kB
+└ ƒ /viewings                              192 B         106 kB
++ First Load JS shared by all             103 kB
+  ├ chunks/18-25b11e3a132b87ef.js        46.5 kB
+  ├ chunks/87c73c54-24122e7b92478d00.js  54.2 kB
+  └ other shared chunks (total)          1.92 kB
+
+
+ƒ Middleware                             34.6 kB
+
+ƒ  (Dynamic)  server-rendered on demand
+
