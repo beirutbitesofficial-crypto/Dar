@@ -4,14 +4,14 @@ A complete platform for property **sales and rentals** in Iqlim El Kharroub, Sai
 
 | Part | Stack | Folder |
 |---|---|---|
-| Customer & owner mobile app (iOS + Android) | Expo SDK 54 · React Native 0.81 · TypeScript · Expo Router | `apps/mobile` |
-| Administration dashboard (staff & admins) | Next.js 15 (App Router) · React 19 | `apps/admin` |
-| Backend API | NestJS 11 · Prisma 6 · PostgreSQL 16 | `apps/api` |
+| Customer & owner mobile app (iOS + Android) | Expo SDK 54 · React Native 0.81.5 · TypeScript · Expo Router 6 | `apps/mobile` |
+| Administration dashboard (staff & admins) | Next.js 15.5 (App Router) · React 19.1 | `apps/admin` |
+| Backend API | NestJS 11 · Prisma 6.19 · PostgreSQL 16 | `apps/api` |
 | Shared domain logic, validation, types, branding, translations | TypeScript · Zod | `packages/shared` |
 
 “Dar / دار” is a **placeholder brand**. Name, colors, contact details and bundle IDs live in one file: `packages/shared/src/brand.ts`. Icons/splash in `apps/mobile/assets` are generated placeholders.
 
-> ⚠️ **Read [`docs/VERIFICATION.md`](docs/VERIFICATION.md) first.** This codebase was produced in an environment without npm registry access. The domain logic and the database were tested for real; the NestJS / Next.js / Expo layers were written in full but have **not yet been installed, compiled or run**. The first commands to run are listed there.
+> ✅ **Verified end to end in CI** (`.github/workflows/ci.yml`): install from the lockfile, typecheck, lint, 53 domain + 3 unit + 18 end-to-end API + 38 database tests, production builds of the API and dashboard, iOS/Android bundle export, Expo Doctor and a screenshot smoke test of every screen. Results, versions and what still needs real devices or credentials: [`docs/VERIFICATION.md`](docs/VERIFICATION.md). Screens: [`docs/screenshots`](docs/screenshots/).
 
 ---
 
@@ -63,6 +63,7 @@ Demo listings are flagged `demo=true`, carry a **“إعلان تجريبي / De
 | Command | What it does |
 |---|---|
 | `pnpm verify` | typecheck → lint → tests → SQL guard tests → builds |
+| `bash scripts/ci-verify.sh` | the full CI pipeline (needs PostgreSQL on localhost; also exports the apps and runs the screenshot smoke test) |
 | `pnpm test` | shared domain tests, API unit + end-to-end tests |
 | `pnpm test:sql` | applies migrations to `dar_test` and attacks the database guards |
 | `pnpm db:check` | confirms the hand-written migrations match `schema.prisma` |
