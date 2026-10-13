@@ -81,7 +81,9 @@ test('existing agreements retain their accepted fees after global settings chang
 test('sale snapshot freezes rules; override requires an admin reason', () => {
   const s = snapshotSaleTerms(settingsV1, 10_000_000);
   assert.equal(s.buyerCommissionCents, 250_000);
-  assert.throws(() => (s as any).rules.buyerBps = 1);
+  assert.ok(Object.isFrozen(s.rules), 'frozen rules');
+  try { (s as any).rules.buyerBps = 1; } catch { /* strict mode throws; sloppy mode ignores */ }
+  assert.equal(s.rules.buyerBps, 250, 'rules cannot be mutated');
   const o = snapshotSaleTerms(settingsV1, 10_000_000, {
     rules: { sellerBps: 200, buyerBps: 250 },
     approvedByAdminId: 'admin-1',

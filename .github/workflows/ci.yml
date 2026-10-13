@@ -1,0 +1,58 @@
+name: verify
+
+# Full verification: install, Prisma, migration drift check, typecheck, lint,
+# unit + e2e + SQL tests, production builds. Every step runs even if an earlier
+# one fails, and logs are pushed to the `ci-results` branch for review.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: dar
+          POSTGRES_PASSWORD: dar_local_dev
+          POSTGRES_DB: dar
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U dar" --health-interval 5s --health-timeout 5s --health-retries 20
+    env:
+      DATABASE_URL: postgresql://dar:dar_local_dev@localhost:5432/dar
+      SHADOW_DATABASE_URL: postgresql://dar:dar_local_dev@localhost:5432/dar_shadow
+      TEST_DATABASE_URL: postgresql://dar:dar_local_dev@localhost:5432/dar_test
+      PGPASSWORD: dar_local_dev
+      CI: "true"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run verification
+        run: bash scripts/ci-verify.sh
+      - name: Publish results to ci-results branch
+        if: always()
+        run: |
+          git config user.name "dar-ci"
+          git config user.email "ci@users.noreply.github.com"
+          SHA=$(git rev-parse --short HEAD)
+          mkdir -p /tmp/out && cp -r ci-out/. /tmp/out/
+          [ -f pnpm-lock.yaml ] && cp pnpm-lock.yaml /tmp/out/ || true
+          git fetch origin ci-results || true
+          git checkout --orphan ci-results-new
+          git rm -rf --cached . >/dev/null
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -r /tmp/out/. .
+          echo "$SHA" > SOURCE_COMMIT
+          git add -A
+          git commit -qm "CI results for $SHA"
+          git push -f origin HEAD:ci-results
