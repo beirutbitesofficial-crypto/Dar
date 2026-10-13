@@ -87,13 +87,16 @@ export type DisplayLocale = 'ar' | 'en';
  */
 export function formatUSD(cents: Cents, locale: DisplayLocale = 'ar'): string {
   const whole = cents % 100 === 0;
-  const fmt = new Intl.NumberFormat(locale === 'ar' ? 'ar-LB-u-nu-latn' : 'en-US', {
+  const fmt = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: CURRENCY,
     minimumFractionDigits: whole ? 0 : 2,
     maximumFractionDigits: 2,
   });
-  return fmt.format(cents / 100);
+  const text = fmt.format(cents / 100);
+  // In Arabic text, wrap the amount in a left-to-right isolate so "$600" is never
+  // reordered by the bidi algorithm into "600 $" or "$US 600".
+  return locale === 'ar' ? `\u2066${text}\u2069` : text;
 }
 
 /** Plain decimal string for CSV exports and receipts, e.g. 2500.00 */

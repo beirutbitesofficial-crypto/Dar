@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { Pressable, StyleSheet, View } from 'react-native';
-import { formatBasisPoints, formatUSD, type PublicListing } from '@dar/shared';
+import { countLabel, formatBasisPoints, formatUSD, type PublicListing } from '@dar/shared';
 import { useI18n, useLocalized } from '@/lib/i18n';
 import { colors, radius, shadow, space } from '@/lib/theme';
 import { Badge, Row, Text } from './ui';
@@ -17,11 +17,11 @@ export function ListingCard({ listing, compact, favorite, onToggleFavorite }: { 
   const cover = listing.photos.find((p) => p.isCover) ?? listing.photos[0];
   const specs = [
     listing.specs.sizeSqm ? `${listing.specs.sizeSqm} ${dict.common.sqm}` : null,
-    listing.specs.bedrooms != null ? `${listing.specs.bedrooms} ${dict.property.bedrooms}` : null,
-    listing.specs.bathrooms != null ? `${listing.specs.bathrooms} ${dict.property.bathrooms}` : null,
+    listing.specs.bedrooms != null ? countLabel(locale, listing.specs.bedrooms, 'bedrooms') : null,
+    listing.specs.bathrooms != null ? countLabel(locale, listing.specs.bathrooms, 'bathrooms') : null,
   ].filter(Boolean);
   const title = loc(listing.title);
-  const place = `${loc(listing.location.townName)}، ${loc(listing.location.areaName)}`;
+  const place = `${loc(listing.location.townName)}${locale === 'ar' ? '، ' : ', '}${loc(listing.location.areaName)}`;
   return (
     <Pressable
       onPress={() => router.push(`/listing/${listing.id}`)}

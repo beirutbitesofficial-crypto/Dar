@@ -64,8 +64,14 @@ const m = await mobileCtx.newPage();
 const MW = 'http://localhost:8081';
 await visit(m, 'mobile-01-home-ar', `${MW}/`, 3000, 'load');
 await visit(m, 'mobile-02-search-ar', `${MW}/search`, 3000, 'load');
-const firstListing = await m.locator('a[href^="/listing/"]').first().getAttribute('href').catch(() => null);
+// React Native Web renders cards as pressables (no hrefs), so take listing IDs from the public API.
+const listingsResp = await fetch('http://localhost:4000/v1/listings?listingType=RENT').then((r) => r.json()).catch(() => ({ items: [] }));
+const saleResp = await fetch('http://localhost:4000/v1/listings?listingType=SALE').then((r) => r.json()).catch(() => ({ items: [] }));
+const firstListing = listingsResp.items?.[0] ? `/listing/${listingsResp.items[0].id}` : null;
+const firstSale = saleResp.items?.[0] ? `/listing/${saleResp.items[0].id}` : null;
+fs.writeFileSync('ci-out/public-listing-sample.json', JSON.stringify(listingsResp.items?.[0] ?? null, null, 2));
 if (firstListing) await visit(m, 'mobile-03-listing-ar', `${MW}${firstListing}`, 3000, 'load');
+if (firstSale) await visit(m, 'mobile-03b-sale-listing-ar', `${MW}${firstSale}`, 3000, 'load');
 await visit(m, 'mobile-04-account-ar', `${MW}/account`, 2000, 'load');
 await visit(m, 'mobile-05-login-ar', `${MW}/auth/login`, 2000, 'load');
 await visit(m, 'mobile-06-list-property-ar', `${MW}/owner`, 2000, 'load');
@@ -88,6 +94,7 @@ await visit(m, 'mobile-10-account-signed-in-ar', `${MW}/account`, 2000, 'load');
 // English (LTR)
 await m.evaluate(() => localStorage.setItem('dar.locale', 'en'));
 await visit(m, 'mobile-11-home-en', `${MW}/`, 3000, 'load');
+if (firstSale) await visit(m, 'mobile-12b-sale-listing-en', `${MW}${firstSale}`, 3000, 'load');
 if (firstListing) await visit(m, 'mobile-12-listing-en', `${MW}${firstListing}`, 3000, 'load');
 await visit(m, 'mobile-13-requests-en', `${MW}/requests`, 3000, 'load');
 fs.writeFileSync('ci-out/smoke.json', JSON.stringify(report, null, 2));

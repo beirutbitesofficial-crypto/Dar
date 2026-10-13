@@ -89,7 +89,7 @@ export default function ListingDetails() {
           </Row>
           {l.demo && <Text variant="caption" style={{ color: colors.warning }}>{dict.common.demoNotice}</Text>}
           <Text variant="title" accessibilityRole="header">{loc(l.title)}</Text>
-          <Row><Ionicons name="location-outline" size={16} color={colors.textMuted} /><Text variant="small">{[loc(l.location.neighborhoodName), loc(l.location.townName), loc(l.location.areaName)].filter(Boolean).join('، ')}</Text></Row>
+          <Row><Ionicons name="location-outline" size={16} color={colors.textMuted} /><Text variant="small">{[loc(l.location.neighborhoodName), loc(l.location.townName), loc(l.location.areaName)].filter(Boolean).join(locale === 'ar' ? '، ' : ', ')}</Text></Row>
           <PriceBlock listing={l} />
 
           <Card>

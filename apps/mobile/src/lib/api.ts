@@ -1,5 +1,5 @@
 import Constants from 'expo-constants';
-import * as SecureStore from 'expo-secure-store';
+import * as SecureStore from './secure-store';
 import type { AuthTokens } from '@dar/shared';
 
 /**
