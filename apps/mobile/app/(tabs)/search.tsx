@@ -3,7 +3,7 @@ import { useInfiniteQuery } from '@tanstack/react-query';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { FlatList, StyleSheet, TextInput, View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import { MapView, Marker } from '@/components/map';
 import type { Page, PublicListing } from '@dar/shared';
 import { ListingCard, priceLine } from '@/components/listing';
 import { Button, EmptyState, ErrorState, Loading, Row, Screen, Segmented, Text } from '@/components/ui';

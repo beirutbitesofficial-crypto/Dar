@@ -72,6 +72,11 @@ describe('rentals, collections, payouts and sales', () => {
     expect(obs.every((o) => Number(o.feeShareCents) === 5_000 && Number(o.totalCents) === 55_000)).toBe(true);
     // Direct tampering is rejected by the database.
     await expect(prisma.rentalAgreement.update({ where: { id: agreementId }, data: { platformFeeCents: 7_500n, tenantTotalCents: 57_500n } })).rejects.toThrow(/AGREEMENT_TERMS_FROZEN/);
+    // Restore the defaults so later suites see the standard 2.5% / $50 rules.
+    const restore = await admin.api.post('/v1/admin/settings/pricing', {
+      saleBuyerBps: 250, saleSellerBps: 250, rentalMonthlyFeeCents: 5_000, rentalPricingMode: 'NET_PLUS_FEE', termsVersion: 'test-v3', changeReason: 'Restore defaults after test',
+    });
+    expect(restore.status).toBe(201);
   });
 
   it('partial payments, overpayment rejection, idempotent recording and reversal', async () => {

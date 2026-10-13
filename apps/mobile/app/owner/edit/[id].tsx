@@ -6,7 +6,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { Alert, Pressable, StyleSheet, View } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import { MapView, Marker } from '@/components/map';
 import {
   AMENITIES_BY_TYPE,
   FIELD_APPLICABILITY,

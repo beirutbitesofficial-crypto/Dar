@@ -5,9 +5,10 @@ import { colors, fonts } from '@/lib/theme';
 
 export default function TabsLayout() {
   const { dict } = useI18n();
-  const icon = (name: keyof typeof Ionicons.glyphMap) => ({ color, focused }: { color: string; focused: boolean }) => (
-    <Ionicons name={(focused ? name : `${name}-outline`) as keyof typeof Ionicons.glyphMap} size={24} color={color} />
-  );
+  const icon = (name: keyof typeof Ionicons.glyphMap) =>
+    function TabIcon({ color, focused }: { color: string; focused: boolean }) {
+      return <Ionicons name={(focused ? name : `${name}-outline`) as keyof typeof Ionicons.glyphMap} size={24} color={color} />;
+    };
   return (
     <Tabs
       screenOptions={{

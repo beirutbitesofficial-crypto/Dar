@@ -1,13 +1,10 @@
-// Monorepo-aware Metro config: watch the shared package and resolve hoisted modules.
+// Metro config. Expo SDK 54 detects pnpm/yarn monorepos automatically, so we keep
+// Expo's defaults and only make sure the workspace root (packages/shared) is watched.
 const { getDefaultConfig } = require('expo/metro-config');
 const path = require('path');
 
-const projectRoot = __dirname;
-const workspaceRoot = path.resolve(projectRoot, '../..');
-const config = getDefaultConfig(projectRoot);
-
-config.watchFolders = [workspaceRoot];
-config.resolver.nodeModulesPaths = [path.resolve(projectRoot, 'node_modules'), path.resolve(workspaceRoot, 'node_modules')];
-config.resolver.unstable_conditionNames = ['react-native', 'require', 'default'];
+const config = getDefaultConfig(__dirname);
+const workspaceRoot = path.resolve(__dirname, '../..');
+config.watchFolders = Array.from(new Set([...(config.watchFolders ?? []), workspaceRoot]));
 
 module.exports = config;
