@@ -24,6 +24,9 @@
     "test:sql": "bash scripts/test-sql.sh",
     "verify": "pnpm typecheck && pnpm lint && pnpm test && pnpm test:sql && pnpm build"
   },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.0.0"
+  },
   "devDependencies": {
     "@eslint/js": "^9.36.0",
     "eslint": "^9.36.0",
