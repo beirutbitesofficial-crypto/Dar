@@ -16,6 +16,7 @@
     "db:check": "pnpm --filter @dar/api prisma:check",
     "db:seed": "pnpm --filter @dar/api seed",
     "build": "pnpm -r --filter=!@dar/mobile build",
+    "build:api": "pnpm --filter @dar/shared build && pnpm --filter @dar/api build",
     "typecheck": "pnpm -r typecheck",
     "lint": "pnpm -r lint",
     "test": "pnpm -r test",

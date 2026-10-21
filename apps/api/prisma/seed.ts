@@ -10,7 +10,7 @@
  */
 import '../src/config/load-env';
 import { PrismaClient } from '@prisma/client';
-import * as argon2 from 'argon2';
+import { hash as argonHash } from '@node-rs/argon2';
 import sharp from 'sharp';
 import { randomUUID } from 'node:crypto';
 import {
@@ -155,7 +155,7 @@ async function seedDemo(locations: Map<string, string>) {
     return;
   }
   const storage = new StorageService().driver;
-  const hash = await argon2.hash(DEMO_PASSWORD, { type: argon2.argon2id });
+  const hash = await argonHash(DEMO_PASSWORD);
   const mk = (email: string, fullName: string, roles: any[], extra: object = {}) =>
     prisma.user.create({ data: { email, fullName, passwordHash: hash, roles, demo: true, locale: 'ar', termsAcceptedVersion: PLACEHOLDER_TERMS.version, termsAcceptedAt: new Date(), ...extra } });
   const admin = await mk('admin@demo.dar.test', 'مدير تجريبي (Demo Admin)', ['ADMIN'], { phone: '+96170000001' });

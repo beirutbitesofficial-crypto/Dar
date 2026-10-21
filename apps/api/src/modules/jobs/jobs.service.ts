@@ -1,4 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
 import { Prisma } from '@prisma/client';
 import { addDays, formatDateBeirut, formatUSD, todayInBeirut } from '@dar/shared';
@@ -15,9 +15,13 @@ import { SettingsService } from '../settings/settings.service';
  *  - reminders on UNIQUE(obligationId, reminderKey) + notification dedupeKey
  *  - a JobRun row per job+day prevents overlapping runs across instances
  * Run on ONE instance (JOBS_ENABLED=true) or keep the JobRun lock as the guard.
+ *
+ * Hosts that put idle apps to sleep (Hostinger, Render free) can miss the
+ * 06:05 tick, so the daily job also runs shortly after any start after 06:05. The
+ * JobRun lock makes that a no-op when today's run already happened.
  */
 @Injectable()
-export class JobsService {
+export class JobsService implements OnApplicationBootstrap {
   private readonly logger = new Logger('Jobs');
   constructor(
     private readonly prisma: PrismaService,
@@ -35,6 +39,19 @@ export class JobsService {
       if (e instanceof Prisma.PrismaClientKnownRequestError && e.code === 'P2002') return false;
       throw e;
     }
+  }
+
+  onApplicationBootstrap() {
+    if (!env().JOBS_ENABLED || env().NODE_ENV === 'test') return;
+    // Before 06:05 Beirut the scheduled tick still lies ahead; don't send reminders at night.
+    const [h, m] = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Beirut', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' })
+      .format(new Date())
+      .split(':')
+      .map(Number);
+    if (h * 60 + m < 6 * 60 + 5) return;
+    setTimeout(() => {
+      this.daily().catch((e) => this.logger.error(`startup daily run failed: ${e instanceof Error ? e.message : e}`));
+    }, 15_000).unref();
   }
 
   // 06:05 Beirut time daily

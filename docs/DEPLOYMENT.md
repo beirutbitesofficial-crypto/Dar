@@ -40,6 +40,28 @@ NODE_ENV=production node apps/api/dist/main.js
 ```
 Required production env (see `apps/api/.env.example`): `DATABASE_URL`, `JWT_ACCESS_SECRET` and `TOKEN_HASH_PEPPER` (≥ 48 random bytes each, different), `CORS_ORIGINS` (admin origin), `TRUST_PROXY=true` behind a load balancer, `S3_*`, `PUBLIC_API_URL`, `EMAIL_DRIVER=smtp` + `SMTP_URL` once implemented. The API refuses to start with placeholder secrets or dev-only drivers.
 
+## API on Hostinger (Node.js web app)
+
+The API runs on Hostinger's Node.js hosting without compiling anything: password hashing uses `@node-rs/argon2`, which ships prebuilt binaries.
+
+**Build settings** (Websites → the site → Node.js → Settings):
+
+| Field | Value |
+|---|---|
+| Application type | Other |
+| Root directory | `/` (repository root, so the shared package is included) |
+| Package manager | pnpm |
+| Node.js version | 22 |
+| Build script | `build:api` |
+| Output directory | empty |
+| Entry file | `apps/api/dist/main.js` |
+
+**Environment variables:** add every variable from `apps/api/.env.example` in the Node.js app's environment settings (production values: `NODE_ENV=production`, `TRUST_PROXY=true`, Supabase `DATABASE_URL`, R2 `S3_*`, `EMAIL_DRIVER=none`). Hostinger provides `PORT`; don't set it yourself.
+
+**Database migrations** are not run by the build. Apply new migrations from your computer with `DATABASE_URL=... pnpm --filter @dar/api exec prisma migrate deploy` before deploying code that needs them.
+
+**Sleeping apps and the daily job.** Hostinger may stop an idle app. The daily job runs at 06:05 Beirut when the app is awake, and again on any start after 06:05 if today's run hasn't happened (the `JobRun` lock prevents doubles). To keep it awake, add an hPanel cron job every 10 minutes: `curl -fsS https://<api-domain>/health > /dev/null`.
+
 ## Jobs
 The daily job (06:05 Beirut) ends expired leases, generates obligations 35 days ahead, and sends rent reminders. It is safe to run on several instances (a `JobRun` row per day acts as a lock, and every write is idempotent), but set `JOBS_ENABLED=true` on one instance to keep logs clean. Missed days are caught up automatically because generation is “everything up to today + 35 days”.
 

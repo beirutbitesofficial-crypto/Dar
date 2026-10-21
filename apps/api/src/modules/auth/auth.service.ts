@@ -1,12 +1,22 @@
 import { ConflictException, ForbiddenException, Injectable, ServiceUnavailableException, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import * as argon2 from 'argon2';
+import { hash as argonHash, verify as argonVerify } from '@node-rs/argon2';
 import { createHmac, randomBytes, randomUUID } from 'node:crypto';
 import type { AuthTokens, Me, RegisterInput, Role } from '@dar/shared';
 import { AuditService } from '../../common/audit.service';
 import { PrismaService } from '../../common/prisma.service';
 import { env } from '../../config/env';
 import { EmailService } from './email.service';
+
+const ARGON_MEMORY_COST = 19_456;
+const ARGON_TIME_COST = 2;
+
+/** True when a stored hash was made with weaker settings than the current ones. */
+function needsRehash(phc: string): boolean {
+  const m = /^\$argon2id\$v=\d+\$m=(\d+),t=(\d+),p=\d+\$/.exec(phc);
+  if (!m) return true;
+  return Number(m[1]) < ARGON_MEMORY_COST || Number(m[2]) < ARGON_TIME_COST;
+}
 
 const MAX_FAILED_LOGINS = 8;
 const LOCK_MINUTES = 15;
@@ -27,8 +37,12 @@ export class AuthService {
     return createHmac('sha256', env().TOKEN_HASH_PEPPER).update(token).digest('hex');
   }
 
+  // Argon2id (the library default). @node-rs/argon2 ships prebuilt binaries, so
+  // installs never compile native code (shared hosts such as Hostinger can't).
+  // Hashes use the standard PHC format, so ones made by the old `argon2`
+  // package verify unchanged.
   private hashPassword(pw: string) {
-    return argon2.hash(pw, { type: argon2.argon2id, memoryCost: 19_456, timeCost: 2, parallelism: 1 });
+    return argonHash(pw, { memoryCost: ARGON_MEMORY_COST, timeCost: ARGON_TIME_COST, parallelism: 1 });
   }
 
   async register(input: RegisterInput, ip?: string): Promise<AuthTokens> {
@@ -56,13 +70,13 @@ export class AuthService {
     const fail = () => new UnauthorizedException({ code: 'INVALID_CREDENTIALS', message: 'Incorrect email or password' });
     if (!user || user.anonymizedAt) {
       DUMMY_HASH ??= this.hashPassword('dummy-password-for-timing');
-      await argon2.verify(await DUMMY_HASH, password).catch(() => false);
+      await argonVerify(await DUMMY_HASH, password).catch(() => false);
       throw fail();
     }
     if (user.lockedUntil && user.lockedUntil > new Date()) {
       throw new ForbiddenException({ code: 'RATE_LIMITED', message: 'Too many attempts. Try again later.' });
     }
-    const ok = await argon2.verify(user.passwordHash, password).catch(() => false);
+    const ok = await argonVerify(user.passwordHash, password).catch(() => false);
     if (!ok) {
       const failed = user.failedLoginCount + 1;
       await this.prisma.user.update({
@@ -79,7 +93,7 @@ export class AuthService {
     if (device === 'admin' && !(user.roles as Role[]).some((r) => r === 'ADMIN' || r === 'EMPLOYEE')) {
       throw fail(); // the dashboard is for staff only
     }
-    if (argon2.needsRehash?.(user.passwordHash, { memoryCost: 19_456, timeCost: 2 })) {
+    if (needsRehash(user.passwordHash)) {
       await this.prisma.user.update({ where: { id: user.id }, data: { passwordHash: await this.hashPassword(password) } });
     }
     await this.prisma.user.update({ where: { id: user.id }, data: { failedLoginCount: 0, lockedUntil: null } });
@@ -178,7 +192,7 @@ export class AuthService {
 
   async changePassword(userId: string, current: string, next: string) {
     const user = await this.prisma.user.findUniqueOrThrow({ where: { id: userId } });
-    if (!(await argon2.verify(user.passwordHash, current).catch(() => false))) {
+    if (!(await argonVerify(user.passwordHash, current).catch(() => false))) {
       throw new UnauthorizedException({ code: 'INVALID_CREDENTIALS', message: 'Current password is incorrect' });
     }
     await this.prisma.user.update({ where: { id: userId }, data: { passwordHash: await this.hashPassword(next) } });
