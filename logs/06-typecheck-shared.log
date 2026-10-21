@@ -1,0 +1,4 @@
+
+> @dar/shared@0.1.0 typecheck /home/runner/work/Dar/Dar/packages/shared
+> tsc -p tsconfig.json --noEmit
+

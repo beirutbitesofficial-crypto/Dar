@@ -1,0 +1,32 @@
+
+> @dar/api@0.1.0 test:unit /home/runner/work/Dar/Dar/apps/api
+> tsx --test test/unit/*.test.ts
+
+TAP version 13
+# Subtest: upload type is detected from file bytes, not from the name or declared type
+ok 1 - upload type is detected from file bytes, not from the name or declared type
+  ---
+  duration_ms: 1.189085
+  type: 'test'
+  ...
+# Subtest: declared type must match the detected type
+ok 2 - declared type must match the detected type
+  ---
+  duration_ms: 0.167262
+  type: 'test'
+  ...
+# Subtest: CSV export escapes quotes/newlines and neutralizes formula injection
+ok 3 - CSV export escapes quotes/newlines and neutralizes formula injection
+  ---
+  duration_ms: 0.53015
+  type: 'test'
+  ...
+1..3
+# tests 3
+# suites 0
+# pass 3
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 231.590619

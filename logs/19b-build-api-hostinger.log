@@ -1,0 +1,28 @@
+
+> dar@0.1.0 build /home/runner/work/Dar/Dar
+> npm run build:api
+
+
+> dar@0.1.0 build:api
+> npm --prefix packages/shared run build && npm --prefix apps/api run build
+
+
+> @dar/shared@0.1.0 build
+> tsc -p tsconfig.build.json
+
+
+> @dar/api@0.1.0 build
+> nest build
+
+
+> dar@0.1.0 build:api /home/runner/work/Dar/Dar
+> npm --prefix packages/shared run build && npm --prefix apps/api run build
+
+
+> @dar/shared@0.1.0 build
+> tsc -p tsconfig.build.json
+
+
+> @dar/api@0.1.0 build
+> nest build
+

@@ -1,0 +1,38 @@
+CREATE DATABASE
+warn The configuration property `package.json#prisma` is deprecated and will be removed in Prisma 7. Please migrate to a Prisma config file (e.g., `prisma.config.ts`).
+For more information, see: https://pris.ly/prisma-config
+
+Environment variables loaded from .env
+Prisma schema loaded from prisma/schema.prisma
+Datasource "db": PostgreSQL database "dar_base", schema "public" at "localhost:5432"
+
+4 migrations found in prisma/migrations
+
+Applying migration `20261013000000_init`
+Applying migration `20261013000100_financial_guards`
+Applying migration `20261013000200_lockdown_public_api`
+Applying migration `20261013000300_harden_functions`
+
+The following migration(s) have been applied:
+
+migrations/
+  └─ 20261013000000_init/
+    └─ migration.sql
+  └─ 20261013000100_financial_guards/
+    └─ migration.sql
+  └─ 20261013000200_lockdown_public_api/
+    └─ migration.sql
+  └─ 20261013000300_harden_functions/
+    └─ migration.sql
+      
+All migrations have been successfully applied.
+base: 31 locations, 18 amenities, pricing v1, legal drafts, 18 templates
+pg_dump: warning: there are circular foreign-key constraints on this table:
+pg_dump: detail: Location
+pg_dump: hint: You might not be able to restore the dump without using --disable-triggers or temporarily dropping the constraints.
+pg_dump: hint: Consider using a full dump instead of a --data-only dump to avoid this problem.
+pg_dump: warning: there are circular foreign-key constraints on this table:
+pg_dump: detail: RentalAgreement
+pg_dump: hint: You might not be able to restore the dump without using --disable-triggers or temporarily dropping the constraints.
+pg_dump: hint: Consider using a full dump instead of a --data-only dump to avoid this problem.
+381 ../../ci-out/base-seed.sql

@@ -1,0 +1,6 @@
+
+> @dar/mobile@0.1.0 lint /home/runner/work/Dar/Dar/apps/mobile
+> expo lint
+
+env: load .env
+env: export EXPO_PUBLIC_API_URL

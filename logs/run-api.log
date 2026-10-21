@@ -1,0 +1,336 @@
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[NestFactory] [39m[32mStarting Nest application...[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mPrismaModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mThrottlerModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mJwtModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mDiscoveryModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAuditModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mScheduleModule dependencies initialized[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[InstanceLoader] [39m[32mAppModule dependencies initialized[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mHealthController {/}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/health, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mAuthController {/v1/auth}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/register, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/login, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/refresh, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/logout, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/logout-all, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/forgot-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/reset-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/change-password, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/me, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/auth/phone/send-code, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUsersController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/push-tokens, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/push-tokens/:token, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/deletion-request, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/users, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/employees, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/users/:id/roles, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/deletion-requests, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/deletion-requests/:id/complete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mSettingsController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/settings/public, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/legal/:kind, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/settings/pricing, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/settings/pricing, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/legal, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/settings/reminders, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/settings/reminders, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mLocationsController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/locations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/amenities, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/locations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/locations, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/locations/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/amenities, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/amenities/:key, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mListingsController {/v1/listings}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/listings, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/listings/:idOrRef, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mFavoritesController {/v1/me/favorites}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/favorites, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/favorites/ids, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/favorites/:propertyId, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/favorites/:propertyId, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mEstimatesController {/v1/estimates}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/estimates, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mOwnerPropertiesController {/v1/owner/properties}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id/submit, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id/status, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id/revision, DELETE} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id/viewing-activity, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/owner/properties/:id/media/order, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mUploadsController {/v1/uploads}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/uploads, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/uploads/:id/complete, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/uploads/:id, DELETE} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mStaffPropertiesController {/v1/staff}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/properties, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/properties/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/properties/:id/notes, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/properties/:id/status, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/documents/:mediaId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mModerationController {/v1/admin/moderation}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation/properties/:id/decision, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation/revisions/:id/decision, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation/media, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation/properties/:id/assignee, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/moderation/properties/:id/featured, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mCustomerCrmController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/listings/:id/viewing-terms, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/viewings, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/viewings, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/viewings/:id, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/viewings/:id/cancel, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/conversations, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/conversations, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/conversations/:id/messages, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/conversations/:id/messages, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/conversations/:id/read, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/reports, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mStaffCrmController {/v1/staff}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/viewings/requests, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/viewings/calendar, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/viewings/:id/confirm, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/viewings/:id/outcome, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/pipeline, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/:id/status, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/:id/assignee, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/:id/notes, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/leads/:id/offers, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/conversations/:id/notes, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/conversations/:id/notes, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/messages/:id/hide, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mReportsAdminController {/v1/admin/reports}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/reports, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/reports/:id/resolve, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mFinanceStaffController {/v1/staff}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/:id/approve, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/:id/cancel, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/:id/entries, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/entries/reverse, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/sales/obligations/:id/waive, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/acceptance, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/activate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/cancel, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/amendments, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/terminate, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/renew, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/agreements/:id/deposits, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/collections, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/obligations/:id/payments, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/obligations/entries/reverse, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/obligations/:id/refunds, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/obligations/:id/waive, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/payouts/queue, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/payouts/owners/:ownerId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/payouts, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/staff/payouts/:id/reverse, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mFinancePartyController {/v1/me}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/agreements, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/agreements/:id/terms, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/agreements/:id/accept, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/owner-statement, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/sales/:id, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mReportsController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/dashboard, GET} route[39m[38;5;3m +1ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/workload, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/audit, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/exports/rent-ledger.csv, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/exports/payouts.csv, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/exports/listings.csv, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/receipts/rent/:entryId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/statements/owner/:ownerId, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mNotificationsController {/v1}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/notifications, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/me/notifications/read, POST} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/notification-templates, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/admin/notification-templates/:key, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RoutesResolver] [39m[32mDevStorageController {/v1/dev-storage}:[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dev-storage/:token, PUT} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[RouterExplorer] [39m[32mMapped {/v1/dev-storage/:token, GET} route[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[NestApplication] [39m[32mNest application successfully started[39m[38;5;3m +0ms[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:28 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mAPI listening on :4000 (development)[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /health 200 12ms [c4d5b477-9755-45be-84cd-5a56c44b6fdd][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /health 200 4ms [2a0da8cb-bd55-4bfb-acb2-16a095fb4e23][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/login 200 30ms [895c3efa-d12c-425f-8a3f-647c85d0b3ea][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 27ms [2c81110c-107e-43f6-b590-46090c80b440] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/workload 200 57ms [13a2b53e-44d4-46a6-ae0c-0a60e372d922] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 9ms [849c62b4-38ff-4137-bfbf-13627bc7ec84] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/dashboard 200 77ms [204f14a9-b449-4177-bcfa-385d1c4d6fcc] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/workload 200 16ms [b1c2d97c-caaa-4117-aa24-325b460654ef] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:33 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/dashboard 200 26ms [18df89c4-9604-402f-9d92-88a6dc94d392] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 10ms [fc2f6a71-d55d-4480-917c-7f11e99ab8fc] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/moderation 200 10ms [aabde439-c894-457e-a52d-88caad0b011f] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:37 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [44b09d8b-629f-4834-a012-54681e941331] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:37 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties 200 8ms [892dc5a3-bd69-44b4-9cf3-1f0b10d495e8] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:40 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [af8b0765-329e-4478-8a2f-dcecb73aef49] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:40 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/leads 200 7ms [a2aed478-f3dc-4351-8b38-86e957635326] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:42 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [de863e24-17b4-453a-849d-267dc3f822b0] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:42 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/viewings/requests 200 5ms [8a7f3eef-dc02-436d-b8c8-16b992d94e5c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:42 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/viewings/calendar 200 5ms [de55a4b0-1c90-455e-856b-bb4efad77737] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:43 PM [32m    LOG[39m [38;5;3m[Jobs] [39m[32mdaily 2026-10-21: ended=0 generated=0 reminders=0[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [7218dc86-36a8-43ca-b400-2da781512059] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/conversations 200 12ms [39cecbdb-fc66-417b-b773-fcbbb8526455] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:47 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [1473177d-6d4c-4483-82ab-30df9559c321] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:47 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties 200 10ms [3910eb9b-4d85-4154-a89f-906bb4dbc2b7] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:47 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/sales 200 13ms [a8270ba2-d2ce-4801-b411-961dcfdb23d3] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:49 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [17f3304a-9a1b-4a16-9ddd-75ae4a1249bb] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:49 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/agreements 200 6ms [9f57369d-47ae-48bb-b1a7-5651752f77bb] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:51 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 9ms [1e1f5d39-c2de-4c4d-8424-88325de5b19a] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:52 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/collections 200 20ms [b3d59215-a41d-4ebd-bbcb-412a6566c9b2] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:54 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [484fa07e-9ce6-478d-8dc1-738cce182b5b] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:54 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/payouts/queue 200 5ms [376610f0-9f50-4bc8-afc4-98f47bf3d839] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 3ms [0c528251-d6f6-42b1-be89-1a923d1737d2] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/reports 200 3ms [c218af84-6798-4c53-8fdd-5de917d8c22d] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:58 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [4e3d7604-59dc-470f-9654-2704111e263d] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:58 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/users 200 7ms [f2aa6768-d156-425c-9a62-aa761a055636] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:34:58 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/deletion-requests 200 5ms [68444a72-ecf7-4129-b0e8-1019197217cc] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:00 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/locations 200 10ms [8610c592-f4e8-4fd7-838f-4d52976423cd] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:00 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/amenities 200 8ms [542c043b-ae94-4c91-92d2-1b2cc793838c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:00 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 12ms [e6931b7d-67a8-45bf-a83b-18bb32e0a55c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:03 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [a46bdc46-c133-4b77-b588-95eefae245ab] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:03 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/settings/reminders 200 6ms [3b7d34b3-0871-4464-8ec7-fbe69991ba15] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:03 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/settings/pricing 200 8ms [376a41e9-05c2-447e-a2e7-3add835f4ab0] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:03 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/notification-templates 200 6ms [383a1892-008d-43d2-ab42-c0d629bbaa6a] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:05 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [f0a7b85a-2964-416d-9255-c3e608b9931b] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:05 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/audit 200 6ms [c2065b59-7daf-4a7a-9d56-94948390a405] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [b86e8c85-16fc-474a-9f78-138f25c6561f] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:09 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [247b6081-d00d-48fb-a5ce-45c8b99403ec] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:09 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties 200 5ms [12b64a54-2d77-457b-8006-673908e4621f] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [82f5ba41-001c-439a-94e4-ce916c71e77b] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties/cmvi9u3f1004p0cpxpug703jj 200 19ms [f9233586-bcc6-43e0-ba1a-133e4aeefcd1] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/employees 200 9ms [57da422d-b30c-475e-b589-79ea58022be8] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [88c35268-8d28-41e9-830d-1f137157421d][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [1cc6fa87-572a-415e-9403-ad564665e1a9][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:10 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [6d32c549-22a1-4dd2-b210-1ddceab9066c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:12 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [fc362763-a972-4a63-ba07-18f48db5f225] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:12 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/agreements 200 6ms [ad11541c-173d-41c9-b9a8-7b0ef3f76a30] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:13 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [79ee1481-5d05-45e7-86cd-6771a01f4584] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:13 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/agreements/cmvi9u3l9005i0cpxp06z3g44 200 16ms [b36a6321-02dc-4dcb-8fbd-b38b19019db8] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:15 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [e77e53cf-7fcb-4801-8055-ecc2e792503c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:15 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/leads 200 9ms [fc237cb4-2f7c-4646-bae0-35f6252d55ad] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:16 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [31eea82a-47c4-48b2-b17b-b20b34097e9b] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:16 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/leads/cmvi9u3l5005e0cpxebxf1ned 200 11ms [386f0bb9-833c-4073-b0a1-b6a5c3928d0c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:16 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/employees 200 9ms [490deecc-a52f-4df0-8a28-a2a9cf4d0b1e] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:18 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 9ms [1a971e25-7de6-4cb7-933b-2c3788e4bc4c] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:18 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/sales 200 13ms [070d83a1-ec88-4e62-bad4-24577f3c9559] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:18 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties 200 13ms [e52a8541-408c-4ead-90d4-4e7021229468] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:19 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [e4c4e23a-7f55-42c0-ab73-89fbf8e87c1d] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:19 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/sales/cmvi9u3ly00660cpxv2fw771h 200 8ms [537e8f9d-529e-4404-b284-01acf0a43dfe] user=cmvi9u2dy001t0cpxa86ot1hh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/login 200 22ms [7dc7937a-466b-426d-9d9d-2f16411d941c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [9e8b32f4-aeb9-4b48-92ef-168c4e1548b1] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/leads/pipeline 200 7ms [ba8f927f-877c-4d43-95bf-cbbf9f960cd5] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/viewings/requests 200 9ms [b521eae7-a0cb-4049-895f-d431830c6c38] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 6ms [f4408a1d-871d-431b-ad5d-98569a404b99] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/leads/pipeline 200 14ms [e652f609-4a86-46c1-a716-08de0d6b61bf] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:22 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/viewings/requests 200 13ms [7b5d8ef3-5967-4a09-8811-69e46f178914] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:24 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [d1a025bc-a1c4-4cc5-8835-6b027ecb8889] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:24 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/staff/properties 200 6ms [e844202b-7a0b-4da1-a747-c851a905553b] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:26 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/settings/pricing 403 3ms [ffbc0df9-ed97-4397-8984-e67e65deeb71] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:26 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 5ms [dc560c1f-b42c-4f2e-8055-cb16e7279a93] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:26 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/settings/reminders 403 3ms [64821969-dcbe-41d3-b13d-a09c838056d6] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:26 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/admin/notification-templates 403 2ms [71e83c05-0b88-4941-9fff-bc780e9db4bb] user=cmvi9u2e2001v0cpxjc6p2frh[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/locations 200 6ms [caee54e6-91fe-4886-aeab-abd80f5c0fdf][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 16ms [e45608e9-53d2-485c-97cc-60978efa538a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 14ms [87151e4e-bd5c-4482-98b7-39defe3960b4][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [9c710eac-3284-4cda-9d47-477cfc08d76a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [5b42f4cd-f634-4b02-a548-f3d25720a1ff][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [81e0c41a-f41a-4ffa-a28d-0c5ea8feacac][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:29 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [8c1225b9-0b30-46e7-a07c-0c2ae54f20a3][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 13ms [389934c4-7095-4d69-8bb7-b885091b0a3c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [454cfbd9-3beb-4f82-9d52-71ce62435650][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [de4c22e0-0728-481c-acf1-b8f862e2ae56][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [efb98068-ecb4-40d9-b950-39cdd62ab5e6][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [a3aaa629-c3b0-462f-acbb-75d5119b3d2b][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 7ms [347c3bd1-fae1-4c81-8d89-6a52757abec5][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 9ms [7e64ef92-ec2f-4008-8c95-72198fd57ec2][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 8ms [8e004927-17b2-4c51-ad54-b31eb4205628][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [480d4b44-fc60-422d-b3e4-a125cf15ea8d][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:32 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [2d320ac5-3b79-4e71-88f6-3f4731370cee][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 6ms [4d6a088b-e0de-43e7-846f-8002bb6495ed][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 6ms [48739eb1-42ee-46d8-9174-b5809124ec44][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings/cmvi9u2ir00290cpx7ojnffn0 200 7ms [9739eb13-25a7-4b3f-8b23-0a820f8cccf2][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [c2e3e3e7-276c-45a7-9a67-278b378c6f52][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [31965d54-9f59-418d-a422-4ef6f9091398][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:35 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [c7c2039d-3729-46f6-b09c-01fe8597ead0][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:38 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings/cmvi9u2e900210cpxcpazfzmp 200 10ms [f65c070c-0c8b-419d-95ed-34e181879b0c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:38 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [ae6a68a3-0e1b-4ed0-93e7-8103a78746d2][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:38 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [bf6f0284-1c93-4881-80fc-d0fbac38d7bd][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:38 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [599c8692-107d-4027-a225-0a6a1907edfc][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:46 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/owner/properties 401 1ms [8dbab900-5548-450c-a9f4-a12a9cf16c53][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:49 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/login 200 22ms [7b645c05-612d-4d15-933e-0df89cc78d8a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:49 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [0dadc2d4-f09e-44a5-b6d8-12ea9741f693] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:52 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 4ms [42f5559e-0d1d-4d31-a036-01219b46ae8d] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:52 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/viewings 200 8ms [9b463b65-541b-4672-b8ae-91874339e755] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:52 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/conversations 200 9ms [b3a566d0-ca0b-4a3f-abb6-c14b9979dd3c] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 6ms [e7d7bf51-5c39-484d-8b8d-b11b0898f47b] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/favorites/ids 200 5ms [ec466e2a-0ce7-49b9-b0fb-b89296de7b27] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/favorites 200 6ms [0619dcff-50d9-4218-99ab-0c2294217c9a] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:58 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings/cmvi9u2ir00290cpx7ojnffn0/viewing-terms 200 8ms [bf157b0c-4a65-4adb-bf63-3097f454c508][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:35:58 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 5ms [054ece30-4316-4698-a7b9-a1665d4dd21a] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:01 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 4ms [c8ea481d-3381-417d-a46c-6934956f560e] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:04 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/login 200 20ms [eef31c55-d379-4c2b-b62a-51a459b63ede][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:04 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 4ms [ae26ca92-5747-4eb2-9e20-0d25d96a2907] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/owner/properties 401 1ms [056e0f41-1582-4b1e-8e9a-3cd666c1589a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 10ms [bb880b6b-d296-466f-aacb-34cd739011ed] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/refresh 200 8ms [20de9457-53aa-494f-9005-e8b4fd706fb6][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/owner/properties 200 8ms [226b657c-b4bb-47d5-961d-f7aca68351ea] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [c8593dcb-ddbc-4a9c-b44f-7a63819a7257][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [830c7667-4283-4bd6-b452-5acaba49e08c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 4ms [eb493b7d-dc54-406e-888f-6bbbca992389][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 3ms [43a83116-2cca-4c46-90ec-43a8ab202252][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [697c4414-f586-4952-beca-4d779760ba2a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [a95feaef-2d7c-4442-b111-5fc9b5f5f49c][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:07 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [d35ac46c-7423-449f-b6e0-fbfd67873505][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:11 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/settings/public 200 11ms [1186bb12-7d8d-4dde-beb3-f6e9202a18a1][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:11 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/locations 304 9ms [85b80162-53a4-4206-bb39-451084767a55][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:11 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 7ms [439ba4d6-6001-44cb-b201-a34f9136448e] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/agreements 401 1ms [3b1d9424-d8c3-4009-9c4a-ceb147a89b7f][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 8ms [28403e43-f181-4dfc-872e-f19ab12f2e4f] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/refresh 200 9ms [b14776f0-2cf2-4b81-813f-daeb666836e8][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:45 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/agreements 200 7ms [1c7fd9f1-4b96-4a6f-8431-52cd8cc46740] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:48 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/owner-statement 401 1ms [d87e6211-4684-442c-b2e7-2ace6f84f09a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:48 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 9ms [a82ca341-86b8-4469-bd41-c652f2ad0f35] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:48 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/refresh 200 7ms [c14d3f34-e530-4bf2-a9a3-9e9e95b065c4][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:48 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/owner-statement 200 9ms [bfbd401d-8d48-4ecd-8e72-8ed19d14e893] user=cmvi9u2e3001w0cpxiclmst7c[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:53 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mPOST /v1/auth/login 200 20ms [0cf24a78-8be1-4431-be62-8759bc932655][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:53 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 200 2ms [8ac97755-ff7e-4488-a1dc-59c16d0f6d3e] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/locations 304 8ms [fc3917fd-0d21-4435-b09f-a4cadafcd44a][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 11ms [fef21550-0fec-4458-b07f-5978b2557a80] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 21ms [03472b79-ec48-4b37-be1a-395144413423][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings 200 24ms [463b1ec2-c8c0-43f5-8288-ff246a031447][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/favorites/ids 304 4ms [af4af048-47da-42ce-8afd-4e22f8d9661a] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [2cf4b378-8642-4e1e-b046-1038f321be74][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [8d260fd2-3f37-4324-aa07-80508ad6f0bc][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [d7864082-892e-45bb-94ad-e72c9d6e19dc][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:56 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 2ms [396e4b7a-a34d-41d9-9633-4ccb64ef6e36][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings/cmvi9u2e900210cpxcpazfzmp 200 10ms [c6e30ef4-65d8-4680-9956-4ff8ddddeaff][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 6ms [fca45b0f-1005-4409-90bd-e0386e07a76c] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 7ms [71000175-e524-49c4-ac52-9121f2347e4e][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [015b0a35-fe6a-41af-a6c8-79feffa9b8cd][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 5ms [0358ac4e-0d19-4e1d-bd9b-4942ed5d4cdd][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:36:59 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/favorites/ids 304 5ms [63955f22-c3c0-4507-bdcb-45452b9f522c] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:02 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/listings/cmvi9u2ir00290cpx7ojnffn0 200 7ms [7f9e14f5-56b3-4603-9c44-b0fc0ed23b46][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:02 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 5ms [207a6315-fd4d-4132-8106-dfae218783b7] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:02 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 8ms [62f68f0b-1bb6-4275-8d8b-8f44707296e6][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:02 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [20839b93-495f-474c-b324-63a5c8b9963b][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:02 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/dev-storage/[signed] 200 6ms [b831e5e7-35c6-4975-ac4f-fe63e44d922d][39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:03 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/favorites/ids 304 4ms [80370414-b851-4edf-83a3-00f4d8170e0e] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:06 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/auth/me 304 5ms [d8b5601d-a0dd-499f-833b-1f38c8a0f580] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:06 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/me/viewings 304 9ms [1712132d-2077-466c-a911-c40b381c0680] user=cmvi9u2e5001y0cpxs0es6mut[39m
+[32m[Nest] 6142  - [39m10/21/2026, 3:37:06 PM [32m    LOG[39m [38;5;3m[HTTP] [39m[32mGET /v1/conversations 304 9ms [4e5e65e4-669e-42ef-a93c-5e2a0d1d06e2] user=cmvi9u2e5001y0cpxs0es6mut[39m

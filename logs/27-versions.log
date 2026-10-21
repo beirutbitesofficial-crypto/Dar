@@ -1,0 +1,127 @@
+Legend: production dependency, optional only, dev only
+
+dar@0.1.0 /home/runner/work/Dar/Dar (PRIVATE)
+
+dependencies:
+@supabase/supabase-js 2.118.0
+
+devDependencies:
+@eslint/js 9.39.5
+eslint 9.39.5
+globals 16.5.0
+playwright 1.64.0
+prettier 3.9.10
+tsx 4.23.15
+typescript 5.9.3
+typescript-eslint 8.71.2
+
+@dar/admin@0.1.0 /home/runner/work/Dar/Dar/apps/admin (PRIVATE)
+
+dependencies:
+@dar/shared link:../../packages/shared
+next 15.5.27
+react 19.1.0
+react-dom 19.1.0
+server-only 0.0.1
+zod 3.25.76
+
+devDependencies:
+@eslint/js 9.39.5
+@types/node 22.20.5
+@types/react 19.1.17
+@types/react-dom 19.1.11
+eslint 9.39.5
+globals 16.5.0
+typescript 5.9.3
+typescript-eslint 8.71.2
+
+@dar/api@0.1.0 /home/runner/work/Dar/Dar/apps/api (PRIVATE)
+
+dependencies:
+@aws-sdk/client-s3 3.1150.0
+@aws-sdk/s3-request-presigner 3.1150.0
+@dar/shared link:../../packages/shared
+@nestjs/common 11.2.7
+@nestjs/core 11.2.7
+@nestjs/jwt 11.0.2
+@nestjs/platform-express 11.2.7
+@nestjs/schedule 6.1.3
+@nestjs/throttler 6.7.1
+@node-rs/argon2 2.2.2
+@prisma/client 6.19.3
+helmet 8.3.0
+reflect-metadata 0.2.2
+rxjs 7.8.2
+sharp 0.34.5
+zod 3.25.76
+
+devDependencies:
+@nestjs/cli 11.0.24
+@nestjs/testing 11.2.7
+@types/express 5.0.6
+@types/jest 30.0.0
+@types/node 22.20.5
+@types/supertest 6.0.3
+jest 30.5.2
+prisma 6.19.3
+supertest 7.3.1
+ts-jest 29.4.14
+tsx 4.23.15
+typescript 5.9.3
+
+@dar/mobile@0.1.0 /home/runner/work/Dar/Dar/apps/mobile (PRIVATE)
+
+dependencies:
+@dar/shared link:../../packages/shared
+@expo-google-fonts/ibm-plex-sans-arabic 0.4.2
+@expo/metro-runtime 6.1.2
+@expo/vector-icons 15.1.1
+@react-native-async-storage/async-storage 2.2.0
+@react-native-community/netinfo 11.4.1
+@tanstack/react-query 5.104.2
+expo 54.0.37
+expo-constants 18.0.14
+expo-crypto 15.0.9
+expo-device 8.0.10
+expo-document-picker 14.0.8
+expo-file-system 19.0.24
+expo-font 14.0.12
+expo-haptics 15.0.8
+expo-image 3.0.11
+expo-image-manipulator 14.0.8
+expo-image-picker 17.0.11
+expo-linking 8.0.12
+expo-localization 17.0.9
+expo-notifications 0.32.17
+expo-router 6.0.24
+expo-secure-store 15.0.8
+expo-sharing 14.0.8
+expo-splash-screen 31.0.13
+expo-status-bar 3.0.9
+expo-updates 29.0.20
+react 19.1.0
+react-dom 19.1.0
+react-native 0.81.5
+react-native-maps 1.20.1
+react-native-safe-area-context 5.6.2
+react-native-screens 4.16.0
+react-native-web 0.21.4
+zod 3.25.76
+
+devDependencies:
+@babel/core 7.29.7
+@types/react 19.1.17
+eslint 9.39.5
+eslint-config-expo 10.0.0
+tsx 4.23.15
+typescript 5.9.3
+
+@dar/shared@0.1.0 /home/runner/work/Dar/Dar/packages/shared (PRIVATE)
+
+dependencies:
+zod 3.25.76
+
+devDependencies:
+@types/node 22.20.5
+tsx 4.23.15
+typescript 5.9.3

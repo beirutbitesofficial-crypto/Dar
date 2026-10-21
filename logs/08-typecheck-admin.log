@@ -1,0 +1,4 @@
+
+> @dar/admin@0.1.0 typecheck /home/runner/work/Dar/Dar/apps/admin
+> tsc --noEmit
+
